@@ -74,9 +74,9 @@ class ContentController  extends Controller{
 
         $pagination = $paginator
             ->paginate($discs, $this->get('request')->query->get('page',1),12);
+        $count = count($pagination);
 
-
-        return $this -> render('CinemaxBundle:content:allCatalog.html.twig',array('pagination' => $pagination, 'title' => 'Весь каталог'));
+        return $this -> render('CinemaxBundle:content:allCatalog.html.twig',array('count'=> $count, 'pagination' => $pagination, 'title' => 'Весь каталог'));
 
     }
 
@@ -91,7 +91,8 @@ class ContentController  extends Controller{
 
         $pagination = $paginator
             ->paginate($sortedDiscs, $this->get('request')->query->get('page',1),12);
-        return $this->render("CinemaxBundle:content:allCatalog.html.twig", array('pagination' => $pagination, 'title' => 'Весь каталог'));
+        $count = count($pagination);
+        return $this->render("CinemaxBundle:content:allCatalog.html.twig", array('count'=> $count, 'pagination' => $pagination, 'title' => 'Весь каталог'));
     }
 
     public function getNoveltiesAction()
@@ -136,8 +137,8 @@ class ContentController  extends Controller{
         $pagination = $paginator
             ->paginate($novelties, $this->get('request')->query->get('page',1),12);
 
-
-        return $this->render('CinemaxBundle:content:allCatalog.html.twig', array('pagination' => $pagination, 'title' => 'Новинки'));
+        $count = count($pagination);
+        return $this->render('CinemaxBundle:content:allCatalog.html.twig', array('count'=> $count, 'pagination' => $pagination, 'title' => 'Новинки'));
 
     }
     public function getInfoAction($id){

@@ -51,4 +51,16 @@ class DiscsRepository extends EntityRepository{
 
         return $query->getResult();
     }
+
+    public function searchDiscs($searchText){
+
+        $query = $this->createQueryBuilder('q')
+            ->orWhere("q.name like :search")
+            ->orWhere('q.description like :search')
+            //->orWhere('c.value like :search')
+            ->andWhere('q.active = 1')
+            ->setParameter('search', '%' . $searchText . '%');
+
+        return $query->getQuery();
+    }
 }

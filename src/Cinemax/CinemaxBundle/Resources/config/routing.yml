@@ -23,5 +23,11 @@ cinemax_disc_info:
     defaults: { _controller: CinemaxBundle:Content:getInfo }
 
 mail:
-    pattern:  /mail
+    pattern:  /mail/
     defaults: { _controller: CinemaxBundle:Bin:sendEmail }
+
+cinemax_search:
+    pattern: /search/
+    defaults: { _controller: CinemaxBundle:Search:index }
+    requirements:
+       _method:  GET

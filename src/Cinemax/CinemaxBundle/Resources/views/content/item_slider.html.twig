@@ -11,9 +11,9 @@
                 <li><span>Описание диска: </span>{{ disc.description }}</li>
                 <li><span>Страна: </span>{{ disc.country }}</li>
                 <li><span>Формат: </span>{{ disc.format }}</li>
-                <li>{% if disc.type == 'Film' or disc.type == "Multfilm"%}<span>Количество фильмов: </span>{{ disc.quantityFilms }}{% endif %}</li>
-                <li>{% if disc.type == 'Serial' or disc.type =="Multserial" %}<span>Количество серий: </span>{{ disc.quantitySeries }}{% endif %}</li>
-                <li>{% if disc.type == 'Clip' %}<span>Количество клипов: </span>{{ disc.quantityClips }}{% endif %}</li>
+                <li>{% if disc.type == 'Фильм' or disc.type == "Multfilm"%}<span>Количество фильмов: </span>{{ disc.quantityFilms }}{% endif %}</li>
+                <li>{% if disc.type == 'Сериал' or disc.type =="Multserial" %}<span>Количество серий: </span>{{ disc.quantitySeries }}{% endif %}</li>
+                <li>{% if disc.type == 'Клип' %}<span>Количество клипов: </span>{{ disc.quantityClips }}{% endif %}</li>
                 <li><span>Производитель: </span>{{ disc.producer }}</li>
                 <li><span>Дата выпуска: </span>Уже в продаже</li>
                 <li><span>Перевод: </span>{{ disc.translation  }}</li>

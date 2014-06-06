@@ -35,7 +35,7 @@ class JanrsAdmin extends Admin {
     {
         $listmapper
             ->addIdentifier('id', null, array('label' => 'ID'))
-            ->add('name', null, array('label' => 'Жанр'));
+            ->addIdentifier('name', null, array('label' => 'Жанр'));
 
     }
 }

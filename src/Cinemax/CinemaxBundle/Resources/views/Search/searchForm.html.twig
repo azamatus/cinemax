@@ -1,0 +1,4 @@
+<form action="{{ path('cinemax_search') }}#aftersearch" method="get" {{ form_enctype(form) }}>
+    {{ form_widget(form.search,{'attr':{'class':'login_password'} }) }}
+    <input type="submit" class="search_icon" value="">
+</form>
