@@ -162,3 +162,8 @@ a2lix_translation_form:
     manager_registry: doctrine      # [3]
     templating: "A2lixTranslationFormBundle::default.html.twig"      # [4]
 
+gregwar_captcha:
+    width: 150
+    height: 25
+    quality: 60
+    distortion: false

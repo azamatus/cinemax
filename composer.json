@@ -38,7 +38,7 @@
         "friendsofsymfony/jsrouting-bundle": "~1.1",
         "prezent/doctrine-translatable-bundle": "dev-master",
         "a2lix/translation-form-bundle": "dev-master",
-        "gregwar/captcha-bundle": "1.*",
+        "gregwar/captcha-bundle": "dev-master",
         "sonata-project/core-bundle": "~2.2@dev",
         "jms/serializer-bundle": "~0.11"
     },

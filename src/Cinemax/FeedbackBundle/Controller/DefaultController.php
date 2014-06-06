@@ -11,19 +11,33 @@ use Cinemax\FeedbackBundle\Entity\Feedback;
 class DefaultController extends Controller
 {
     public function indexAction(Request $request){
-
         $entity = new Feedback();
         $form = $this->createForm(new FeedbackType(), $entity);
-
         $form->handleRequest($request);
-        if($form->isValid()){
+       if($form->isValid()){
             $em = $this->getDoctrine()->getManager();
             $em -> persist($entity);
             $em -> flush();
 
-            return $this->render('CinemaxFeedbackBundle:Default:sended.html.twig');
-        }
+           $message = \Swift_Message::newInstance()
+               ->setSubject('Письмо в обратную связь')
+               ->setFrom($this->container->getParameter('email_from'))
+               ->setTo($this->container->getParameter('email_to'))
+               ->setBody(
+                   $this->getMessage($entity),
+                   'text/html'
+               )
+            ;
+           $this->get('mailer')->send($message);
+
+           return $this->render('CinemaxFeedbackBundle:Default:sended.html.twig');
+       }
 
         return $this->render('CinemaxFeedbackBundle:Default:index.html.twig', array('form' => $form->createView()));
+    }
+
+    public function getMessage(Feedback $entity)
+    {
+        return "Сообщение от ".$entity->getEmail().", \n".$entity->getMessage();
     }
 }
