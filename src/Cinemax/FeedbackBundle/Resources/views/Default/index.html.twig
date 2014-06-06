@@ -1,0 +1,40 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" href="{{ asset('bundles/cinemaxfeedback/css/feedback.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="feedback">
+        <h1>Обратная связь</h1>
+        {{ form_start(form) }}
+        <div class="item">
+            {% set error = '' %}
+            {% set error_message = '' %}
+            {% if form.email.vars.errors|length %}
+                {% set error = 'error' %}
+                {% set error_message = form_errors(form.email)|striptags %}
+            {% endif %}
+            {{ form_widget(form.email, {'attr':{'class':error, 'title':error_message} }) }}
+        </div>
+        <div class="item">
+            <div class="textarea">
+                {{ form_widget(form.message, {'attr':{'cols':30, 'rows':10} }) }}
+            </div>
+        </div>
+        <div class="item captcha_block">
+            {% set error = '' %}
+            {% set error_message = '' %}
+            {% if form.captcha.vars.errors|length %}
+                {% set error = 'error' %}
+                {% set error_message = form_errors(form.captcha)|striptags %}
+            {% endif %}
+            {{ form_widget(form.captcha, {'attr':{'class':error, 'title':error_message} }) }}<br/>
+            {{ form_widget(form.save) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('public/js/validate_comment.js') }}"></script>
+{% endblock %}

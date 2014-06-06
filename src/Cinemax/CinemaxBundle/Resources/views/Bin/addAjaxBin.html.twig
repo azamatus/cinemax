@@ -1,0 +1,14 @@
+{% block stylesheets %}
+    <link href="{{ asset('bundles/cinemax/css/bin.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+<div class="popup">
+    {#{% media disc.poster, 'big' with {'class': 'popup_disc_image'} %}#}
+    {% for galleryHasMedia in disc.poster.GalleryHasMedias %}
+        <img class="popup_disc_image" src="{% path galleryHasMedia.media, 'posters_small' %}" />
+    {% endfor %}
+    <ul>
+        <li class="popup_disc">{{ disc.name }}</li>
+        <li> Цена: {{ disc.price }} сомов</li>
+    </ul>
+    <a class="go_to_bin" href="{{ path('cinemax_bin_discs') }}#bin" >Перейти в корзину</a>
+</div>

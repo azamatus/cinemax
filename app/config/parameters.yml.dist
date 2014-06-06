@@ -1,0 +1,20 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: cinemax
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    locale: ru
+    secret: ThisTokenIsNotSoSecretChangeIt
+    media_upload_url: /cinemax/web/uploads/media
+    phone_number: 0543033336
+    email: azamatkurmanbekov@gmail.com
+    address: Bishkek
+    email_from: azamatkurmanbekov@gmail.com
+    email_to: azamatkurmanbekov@gmail.com

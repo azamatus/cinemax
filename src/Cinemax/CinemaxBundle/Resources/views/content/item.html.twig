@@ -1,0 +1,17 @@
+{% if disc.active == 1 %}
+<div class="disc float_left">
+    {#<a href="#" class='disc_poster'> {% media  disc.poster, 'big' with {'class': 'poster'}%}<br>#}
+    {#<a href="#" class='disc_poster'> {{ disc.poster|galleryThumb('posters_small') }}<br>#}
+    <a href="#" class='disc_poster'>
+        {% for galleryHasMedia in disc.poster.GalleryHasMedias %}
+              <img src="{% path galleryHasMedia.media, 'posters_small' %}" />
+        {% endfor %}<br>
+    <span>{{ disc.name }}</span></a>
+    <div class="trigger" id="{{ disc.id }}">
+        <div class="disc_body"><a class="korzina" href="{{ path('cinemax_bin_ajax_add_disc', {'id':disc.id }) }}" onclick="return false;"><span>Заказать</span></a>
+            <a class="details" href="{{ path('cinemax_disc_info', {'id':disc.id }) }}#info"><span>Подробности</span></a>
+        </div>
+    </div>
+</div>
+{% endif %}
+

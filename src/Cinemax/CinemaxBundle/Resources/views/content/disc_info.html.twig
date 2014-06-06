@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('bundles/cinemax/css/rcarousel_catalog.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="disc_info">
+        <a name="info"></a>
+        <span>{{ disc.name }}</span>
+        <div class="disc_info_image">
+            {#{{ disc.poster|galleryThumb('posters_big') }}#}
+            {% for galleryHasMedia in disc.poster.GalleryHasMedias %}
+                <img id="zoom" src="{% path galleryHasMedia.media, 'posters_small' %}" data-zoom-image="{% path galleryHasMedia.media, 'posters_big' %}" />
+            {% endfor %}
+        </div>
+        {% for info in disc.details %}
+                <div class="disc_info_content">{{ info.content|raw }}</div>
+        {% endfor %}
+        <a href="{{ path('cinemax_bin_ajax_add_disc', {'id':disc.id }) }}" class="korzina" onclick="return false;"><p>Заказать</p></a>
+        <a href="{{ path('cinemax_bin_discs') }}#bin" class="disc_info_to_bin"><p>Перейти в корзину</p></a>
+    </div>
+{% endblock %}

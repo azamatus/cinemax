@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('bundles/cinemax/css/jquery.jscrollpane.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ asset('bundles/cinemax/css/jscrollpane.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="catalog_slider">
+    {% render controller("CinemaxBundle:Content:getSlider") %}
+</div>
+    <span class="last_update">Последние обновления</span>
+<div class="content">
+    <div class="catalog">
+        {% render controller("CinemaxBundle:Content:getCatalog") %}
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/cinemax/js/jquery.mousewheel.js') }}" type="text/javascript" ></script>
+    <script src="{{ asset('bundles/cinemax/js/jquery.jscrollpane.min.js') }}" type="text/javascript" ></script>
+    <script src="{{ asset('bundles/cinemax/js/mwheelIntent.js') }}" type="text/javascript" ></script>
+    <script src="{{ asset('bundles/cinemax/js/mwheelIntent.js') }}" type="text/javascript" ></script>
+{% endblock %}

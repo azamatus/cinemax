@@ -1,0 +1,241 @@
+.popup ul
+{
+    padding: 0;
+}
+.popup_disc_image
+{
+    width: 230px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #ffebc2;
+}
+.ui-corner-all
+{
+    z-index: 5;
+    outline: none;
+    //left: 600px!important;
+
+}
+.popup_disc
+{
+    font-size: 20px;
+}
+.go_to_bin
+{
+    display: block;
+    margin-top: 30px;
+    color: red;
+}
+.bin
+{
+    margin: 85px 85px;
+}
+.bin > span
+{
+    font-size: 22px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 5px
+}
+.in_bin_poster
+{
+    width: 160px;
+    height: auto;
+    border: 2px solid #ffebc2;
+    float: left;
+ }
+.bin_table
+{
+    margin: 0;
+    width: 940px; /*IE*/
+ }
+
+.bin_table tr
+{
+    display: block;
+}
+.bin_table tr td:nth-child(1)
+{
+    width: 500px; /*for IE*/
+}
+.bin_table tr
+{
+    background-color: rgba(124, 114, 114, 0.2);
+    margin-bottom: 10px;
+}
+/*.bin_table  tr:nth-child(2n+1)*/
+/*{*/
+    /*background-color: rgba(124, 114, 114, 0.2);*/
+    /*margin-bottom: 10px;*/
+    /*height: 135px;*/
+/*}*/
+.bin_title
+{
+    border-bottom: 1px solid #DBD2C4;
+    margin-bottom: 10px;
+}
+.bin_title li:nth-child(1)
+{
+    padding-left: 10px;
+    display: inline-block;
+}
+.bin_title li
+{
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.bin_title li:nth-child(2)
+{
+    padding-left: 25em;
+    display: inline-block;
+}
+.bin_title li:nth-child(3)
+{
+    padding-left: 5em;
+    display: inline-block;
+}
+.bin_title li:nth-child(4)
+{
+    padding-left: 4em;
+    display: inline-block;
+}
+.bin_disc span
+{
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.bin_disc td .disc_info
+{
+    margin-left: 15px;
+    word-wrap: break-word;
+    float: left;
+}
+.bin_disc td:nth-child(2) span
+{
+   display: block;
+    margin-top: -30px;
+}
+.disc_input
+ {
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    float: left;
+    height: 22px;
+    padding: 2px 3px;
+    text-align: center;
+    width: 32px;
+    margin: -3px 4px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.05);
+ }
+.disc_count_block
+{
+    margin: -26px 70px;
+    width: 160px;
+}
+.disc_counter
+{
+    background: url("../images/add_rem.png") no-repeat;
+}
+.disc_add
+{
+    background-position: 0 -2px;
+    float: left;
+    height: 21px;
+    width: 24px;
+    cursor: pointer;
+}
+.disc_rem
+{
+    background-position: 0 -30px;
+    float: left;
+    height: 21px;
+    width: 25px;
+    cursor: pointer;
+}
+.som
+{
+    margin-right: 5px;;
+}
+.disc_total_price
+{
+    margin: 0 -77px;
+    float: right;
+    position: relative;
+}
+.bin_line
+{
+    border-bottom: 1px solid #DBD2C4;
+    width: 940px!important;
+}
+.discs_total_price
+{
+    display: inline!important;
+    background-color: rgba(124, 114, 114, 0)!important;/*For FireFox*/
+}
+.discs_total_price td span
+{
+    color: red;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+.discs_total_price td span:nth-child(1)
+{
+    margin-right: 60px;
+    padding-left: 15px;
+}
+.in_all
+{
+    float: right;
+    width: 270px;
+}
+.total_all
+{
+    float: right;
+    margin-right: 45px;
+    margin-top: 10px;
+}
+.total_all span
+{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: red;
+}
+.bin_submit
+{
+    background-color: rgba(124, 114, 114, 0)!important;
+    position: relative;
+    top: 15px;
+}
+.bin_button
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFC974;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    height: 25px;
+    width: 190px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.bin_button:hover
+{
+    background-color: rgba(0, 0, 0, 1);
+}
+.bin_remove
+{
+    background: url("../images/popup_close.png") no-repeat;
+    cursor: pointer;
+    height: 11px;
+    width: 11px;
+    position: absolute;
+    right: -37px;
+    top: -35px;
+}

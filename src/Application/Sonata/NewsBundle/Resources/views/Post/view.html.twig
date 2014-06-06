@@ -1,0 +1,95 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    {{ parent() }} : Новости - {{ post.title }}
+{% endblock %}
+
+{% block meta_description %}
+    {{ post.abstract|raw  }}
+{% endblock %}
+
+{% block facebook_image_url %}
+    {% path post.image, 'small' %}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/applicationsonatanews/css/s-article.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="sonata-blog-post-container">
+
+    <h1 class="sonata-blog-post-title">
+        <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a>
+        {#<span class="sonata-blog-post-author">{{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}</span>#}
+    </h1>
+
+    <div class="sonata-blog-post-information">
+
+        <div class="sonata-blog-post-info">
+            {% thumbnail post, 'small' %}
+
+            <div class="sonata-blog-post-date-container">
+                <span class="sonata-blog-post-lbl btm_date">{{ post.publicationDateStart | proDate}}</span>
+            </div>
+
+            <div class="sonata-blog-post-content">
+                {{ post.content|raw }}
+            </div>
+            {% if post.source %}
+                <div class="sonata-blog-post-source">
+                    источник: <a href="{{post.source}}">{{post.source}}</a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="clearbox"></div>
+
+        <div class="sonata-blog-post-tag-container">
+            <div class="sonata-blog-post-tag-title">
+                {{ 'published_under'|transchoice(post.tags|length, {}, 'SonataNewsBundle') }}
+            </div>
+            <div class="sonata-blog-post-tag-list">
+                {% for tag in post.tags%}
+                <a href="{{ url('sonata_news_tag', {'tag': tag.slug} ) }}">{{ tag.name }}</a>
+                {% if not loop.last%}, {%endif%}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clearbox"></div>
+
+        <hr class="sonata-blog-post-hr">
+
+        <div class="sonata-blog-post-bottom-info">
+            <span class="sonata-blog-post-lbl btm_comment">Комментарии ({{ post.commentsCount }})</span>
+            <span class="sonata-blog-post-lbl btm_viewed">Просмотров {{ post.views }}</span>
+        </div>
+        <div class="clearbox"></div>
+        {# TODO: Перевести в отдельный бандл#}
+        <script type="text/javascript">(function() {
+                if (window.pluso)if (typeof window.pluso.start == "function") return;
+                if (window.ifpluso==undefined) { window.ifpluso = 1;
+                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                    var h=d[g]('body')[0];
+                    h.appendChild(s);
+                }})();</script>
+        <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="facebook,twitter,google,vkontakte,odnoklassniki,moimir,email" data-user="1122871114"></div>
+        <div class="clearbox"></div>
+    </div>
+
+    {% render controller('SonataNewsBundle:Post:comments', {'postId': post.id}) %}
+
+    {% if post.iscommentable and app.user %}
+        {% render controller('SonataNewsBundle:Post:addCommentForm', {
+            'postId': post.id,
+            'form': form
+        }) %}
+    {% else %}
+<div>
+    {{ 'message_comments_are_closed'|trans({}, 'SonataNewsBundle') }}
+</div>
+    {% endif %}
+</div>
+{% endblock body %}

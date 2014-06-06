@@ -1,0 +1,53 @@
+{% extends "ApplicationSonataUserBundle::layout.html.twig" %}
+{% block fos_user_content %}
+    <div class="log_reg">
+    {% if app.user and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+        <div>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+            |
+        </div>
+
+        <div>
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        </div>
+
+    {% else %}
+        <a href="{{ path('fos_user_registration_register') }}" class="register">
+            <div class="user_registration"></div>
+            <div class="user_registration_hover"></div>
+            <span class="label_register">РЕГИСТРАЦИЯ</span>
+            <span class="reg_strelka"></span>
+        </a>
+        <div class="forgot_password"><a href="{{ path('fos_user_resetting_request') }}">ЗАБЫЛИ ПАРОЛЬ?</a></div>
+    {% endif %}
+
+    <div id="right_side">
+        {% if error %}
+            <span>{{ error|trans({}, 'FOSUserBundle') }}</span>
+        {% endif %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{% render controller('ApplicationSonataUserBundle:Security:getToken') %}"/>
+            <span>ЛОГИН</span>
+            <div class="reg_strelka1"></div>
+            <input type="text" id="login" class="login_password" name="_username" value="Введите свой логин" required="required"/><br>
+            <span>ПАРОЛЬ</span>
+
+            <div class="reg_strelka2"></div>
+            <input type="password" id="password" class="login_password" name="_password" required="required"value="password"/><br>
+            <div class="submit_login">
+                <button class ="button_register" type="submit" class="submit" name="_submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
+            </div>
+          </form>
+    </div>
+    </div>
+{% endblock fos_user_content %}
+
+
+
+
+
+
+
+

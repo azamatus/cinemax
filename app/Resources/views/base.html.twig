@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Cinemax{% endblock %}</title>
+    <!--[if lt IE 9]>
+        <link href="{{ asset('public/css/if_ie.css') }} " type="text/css" rel="stylesheet"/>
+    <![endif]-->
+    {% block stylesheets %}
+        <link href="{{ asset('public/css/mainframe.css') }} " type="text/css" rel="stylesheet"/>
+        <link type="text/css" rel="stylesheet" href="{{ asset("bundles/applicationsonatauser/css/sonata.css") }}"/>
+        <link type="text/css" rel="stylesheet" href="{{ asset("public/css/jquery-ui.css") }}"/>
+    {% endblock %}
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset("public/js/jquery-1.9.1.min.js") }}"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="{{ asset("public/js/time.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("public/js/jquery.elevatezoom.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("public/js/animation.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("bundles/cinemax/js/bin.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("public/js/jquery.validate.min.js") }}"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-46852185-1', 'cinemax.kg');
+            ga('send', 'pageview');
+
+        </script>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<!--[if lt IE 9]>
+<div class="if_ie">
+    <img class="if_ie_logo" src="{{ asset('public/images/logo2.png') }}" width="500" height="200" alt="logo"/>
+    <p>Просим прощения за возникшие неполадки.<br>
+        Для корректной работы сайта рекомендуем установить другие браузеры. Например: <a href="http://www.google.com/intl/ru/chrome/">Google Chrome</a>,
+    <a href="http://www.mozilla.org/ru/firefox/new/"> Mozilla Firefox</a>, <a href="http://www.opera.com/computer/windows">Opera</a> или
+    <a href="http://support.apple.com/kb/dl1531">Safari</a>
+    </p>
+</div>
+<![endif]-->
+<div class="body">
+<header>
+    <div class="line"></div>
+    <div class="line2"></div>
+    <div class="year"><img src="{{ asset('public/images/2014.png') }}" alt="2013"/></div>
+    <div class="float_left">
+        <div class="header_logo"><a href="{{ path("cinemax_homepage") }}"><img class="logo" src="{{ asset('public/images/logo.png') }}" alt="logo"/></a></div>
+        <div class="logo_shadow"></div>
+        <span class="header_title clearbox">ПЕРВЫЙ ОФИЦИАЛЬНЫЙ САЙТ<br>ПРОИЗВОДСТВА КОМПАКТ-ДИСКОВ</span>
+    </div>
+    <div class="header_picture"></div>
+    <div class="pipe clearbox"></div>
+    <div>
+        <div id="projectors"></div>
+        <div class="projectors_light"></div>
+    </div>
+    <div class="left_bg"></div>
+    <div class="date_position">
+        СЕГОДНЯ<br/>
+        <span id="today"></span><br/>
+        <span id="date"></span><br/>
+        <span id="hour_min_sec"></span>
+    </div>
+    <div id="main-header-menu" class="clearbox">
+        <ul>
+            <li id="menu_bounce" class="item_margins">
+                <a href="{{ path('cinemax_all_catalog') }}#catalog" class="no_outline">
+                    <span class="menu_catalog menu_margins"></span>
+                    <span class="menu_title">КАТАЛОГ</span></a>
+            </li>
+            <li id="menu_bounce" class="item_margins">
+                <a href="javascript:void(0)" class="no_outline" onclick="popup()">
+                    <span class="menu_galery menu_margins"></span>
+                    <span class="menu_title">ФОТОГАЛЕРЕЯ</span>
+                </a>
+            </li>
+            <li id="menu_bounce" class="item_margins">
+                <a href="javascript:void(0)" class="no_outline" onclick="popup()">
+                    <span class="menu_trailers menu_margins"></span>
+                    <span class="menu_title">ТРЕЙЛЕРЫ</span>
+                </a>
+            </li>
+            <li id="menu_bounce" class="item_margins">
+                <a href="{{ path("cinemax_novinki") }}#catalog" class="no_outline">
+                    <span class="menu_novinki menu_margins"></span>
+                    <span class="menu_title">НОВИНКИ</span>
+                </a>
+            </li>
+            <li id="menu_bounce" class="item_margins">
+                <a href="javascript:void(0)" class="no_outline" onclick="popup()">
+                    <span class="menu_sotrudniki menu_margins"></span>
+                    <span class="menu_title">СОТРУДНИКИ</span>
+                </a>
+            </li>
+            <li id="menu_bounce" class="item_margins">
+                <a href="javascript:void(0)" class="no_outline" onclick="popup()">
+                    <span class="menu_about_us menu_margins"></span>
+                    <span class="menu_title">О НАС</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="header_definition clearbox">
+        <div class="definition_bg"></div>
+        <div class="definition">Компания <span>«Cinemax»</span> - производство, нанесение изображения на компакт диски,
+            репликация, тиражирование компакт дисков.
+        </div>
+    </div>
+    <div>
+        {% block menu %}
+            {% render controller("CinemaxMenuBundle:Menu:index") %}
+        {% endblock %}
+        {% block login %}
+            <div class="log_reg">
+            {% if app.user and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="user_login">
+                    <div class="float_left">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                    |
+                    </div>
+
+                    <div class="float_right">
+                     <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                     </a>
+                    </div>
+                </div>
+            {% else %}
+                <a href="{{ path('fos_user_registration_register') }}#reg" class="register">
+                    <div class="user_registration"></div>
+                    <div class="user_registration_hover"></div>
+                    <span class="label_register">РЕГИСТРАЦИЯ</span>
+                    <span class="reg_strelka"></span>
+                </a>
+                    <div class="forgot_password"><a href="{{ path('fos_user_resetting_request') }}">ЗАБЫЛИ ПАРОЛЬ?</a></div>
+                 {% render controller("ApplicationSonataUserBundle:Security:loginBase") %}
+            {% endif %}
+            </div>
+        {% endblock %}
+        <div class="reklama">
+            <img src="{{ asset('public/images/cinemax_anime.gif') }}"/>
+        </div>
+    </div>
+
+</header>
+<div id="disc-added" title="Диск добавлен в корзину"></div>
+<hr class="main_hr clearbox">
+{% block body %}
+{% endblock %}
+<footer>
+    <div class="phones">
+        <span class="phone_icon">+996 552 556 516</span>
+        <span class="phone_icon">+996 771 384 444</span>
+        <span class="phone_icon">+996 778 700 600</span>
+    </div>
+    <div class="cinemax_info">
+        <div class="float_left email">Официальный сайт: www.cinemax.kg / E-Mail: Cinemax.kg@mail.ru</div>
+        <div class="author">Design by: Jumaev. T.</div>
+    </div>
+        <div class="footer_logo">
+    </div>
+</footer>
+</div>
+<script>
+    function popup(){
+        alert("Данный раздел на разработке!")
+    }
+</script>
+</body>
+</html>

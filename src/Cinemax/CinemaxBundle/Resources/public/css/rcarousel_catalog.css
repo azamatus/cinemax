@@ -1,0 +1,134 @@
+.ui-carousel {
+	position: relative; /*for ie7 to work e.g in html carousels*/
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+.ui-carousel > .wrapper {
+    margin: 0;
+    padding: 0;
+    width: 9999px;
+}
+
+#slider-carousel-prev
+{
+    background: url("../images/slider_nav.png") no-repeat;
+    height: 80px;
+    width: 45px;
+    left: -65px;
+    position: absolute;
+    top:0;
+    margin-top: 140px;
+    display: block;
+
+}
+#slider-carousel-next
+{
+    background: url("../images/slider_nav.png") no-repeat;
+    height: 80px;
+    width: 45px;
+    right: -7%;
+    position: absolute;
+    top: 0;
+    margin-top: 140px;
+    display: block;
+    background-position: 100% 0%;
+
+}
+#slider-carousel-next, #slider-carousel-prev:focus
+{
+    outline: none;
+}
+.slider_disc img
+{
+    width: 445px!important;
+    height: 345px!important;
+    border: 2px solid #ffebc2;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.description
+{
+    display: inline-block;
+}
+.slider_description
+{
+    border: 2px solid #ffebc2;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    float: left;
+    width: 400px;
+    position: relative;
+    margin-top: -345px;
+    height: 344px;
+    margin-left: 10px;
+}
+.slider_description > span
+{
+    display: block;
+    width: 260px;
+    height: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 15px auto 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding-top: 5px;
+    background-color: #000000;
+}
+.opacity
+{
+    float: left;
+    width: 400px;
+    margin-left: 10px;
+    height: 346px;
+    border-radius: 5px;
+    position: relative;
+    opacity: 0.5;
+    background-color: #000000;
+}
+.disc_desc
+{
+    margin: 20px -15px 40px;
+}
+.disc_desc ul li:nth-child(2)
+{
+    width: 360px;
+    margin-left: 0px;
+}
+.disc_desc ul li span
+{
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.korzina
+{
+    background: url("../images/korzina.png") no-repeat;
+    width: 30px;
+    height: 25px;
+    float: left;
+    margin-left: 22px;
+    outline: none;
+}
+
+.to_bin
+{
+    background: url("../images/reg_strlelka.png") no-repeat 6px 9px;
+    width: 195px;
+    height: 30px;
+    margin-right: 25px;
+    padding-left: 8px;
+    float: right;
+}
+.slider_description p
+{
+    color: red;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin-left: 35px;
+    margin-top: 5px;
+}

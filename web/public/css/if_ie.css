@@ -1,0 +1,26 @@
+body
+{
+    border: none!important;
+}
+.body
+{
+    display: none;
+}
+.if_ie p
+{
+    font-size: 20px;
+    text-align: center;
+    width: 660px;
+}
+.if_ie a
+{
+    font-size: 20px;
+    color: #ff0000;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.if_ie_logo
+{
+    position: relative;
+    right: -30%;
+}

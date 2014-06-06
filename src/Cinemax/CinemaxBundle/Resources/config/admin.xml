@@ -1,0 +1,114 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="sonata.admin.discs" class="Cinemax\CinemaxBundle\Admin\ContentAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Диски"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Discs</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.countries" class="Cinemax\CinemaxBundle\Admin\CountriesAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Страны"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Countries</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.janrs" class="Cinemax\CinemaxBundle\Admin\JanrsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Жанры"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Janrs</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.types" class="Cinemax\CinemaxBundle\Admin\TypesAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Типы"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Types</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.translations" class="Cinemax\CinemaxBundle\Admin\TranslationAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Язык"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Translations</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.producers" class="Cinemax\CinemaxBundle\Admin\ProducerAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Производители"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Producers</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.formats" class="Cinemax\CinemaxBundle\Admin\FormatsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Диски" label="Форматы"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Formats</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.clients" class="Cinemax\CinemaxBundle\Admin\ClientsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Заказ" label="Клиенты"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\BinClients</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.orders" class="Cinemax\CinemaxBundle\Admin\OrdersAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Заказ" label="Заказы"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\BinOrders</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.visits" class="Cinemax\CinemaxBundle\Admin\VisitsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Посещения" label="Количество посещений"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Visits</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.ips" class="Cinemax\CinemaxBundle\Admin\IpsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Посещения" label="Ip адреса посетителей"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\Ips</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.disc.info" class="Cinemax\CinemaxBundle\Admin\DiscInfoAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Информация о диске" label="Информация о диске"/>
+            <argument />
+            <argument>Cinemax\CinemaxBundle\Entity\DiscInfo</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+    </services>
+</container>

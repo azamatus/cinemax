@@ -1,0 +1,59 @@
+.order_position
+{
+    position: relative;
+    text-align: center;
+    top: 60px;
+}
+#order_form
+{
+    width: 560px;
+}
+.order_position > span
+{
+    font-size: 25px;
+    color: red;
+    display: block;
+    margin-bottom: 20px;
+}
+#order_form input[type="text"], input[type="email"]
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 285px;
+    padding-left: 5px;
+}
+#order_form label
+{
+    width: 140px;
+    display: block;
+    float: left;
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 50px;
+    font-size: 18px;
+}
+#order_form input[type="submit"]
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #FFC974;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    height: 25px;
+    width: 140px;
+    text-transform: uppercase;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+}
+#order_form input[type="submit"]:hover
+{
+    background-color: rgba(0, 0, 0, 1);
+}

@@ -1,0 +1,87 @@
+<form action="{{ path('fos_user_registration_register') }}#check_page" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" id="registration">
+    <a name="reg"></a>
+    <a name="check_page"></a>
+    <div>
+        <p class="login_password"></p>
+        <p class="label_registration">Регистрация</p>
+        {{ form_errors(form) }}
+
+        <div class="oznakomleniye">
+            <div></div>
+            <div class="for_users_description">
+                <p>Здравствуйте, дорогой пользователь!</p><br>
+                <p>Зарегистрированные Cinemax юзеры получают очень многое! Например:</p><br>
+                <ul>
+                	<li>У нас вы можете заказать любые компакт-диски по каталогу</li>
+                    <li>Огромное количество красивых, забавных и милых картинок и фотографий</li>
+                    <li>Возможность прослушивания и скачивания музыки всевозможных жанров и направлений</li>
+                    <li>Онлайн кинозал с огромной коллекцией фильмов</li>
+                    <li>Также вы можете смотреть трейлеры последних новинок</li>
+                </ul>
+                <br><br>
+                <p>Еще один огромный плюс CInemax в том, что у нас простая и быстрая регистрация. Предлагаем сделать это - <br>
+                ведь вы не потратите на это много своего времени!</p>
+            </div>
+        </div>
+    </div>
+    <div class="registration_blocks">
+        <div>
+            <div class="registration_label">{{ form_label(form.username, 'Логин:') }}</div>
+            {{ form_errors(form.username) }}
+            <div class="registration_input">{{ form_widget(form.username) }}</div>
+        </div>
+
+        <div>
+            <div class="registration_label">{{ form_label(form.email, 'E-mail:') }}</div>
+            {{ form_errors(form.email) }}
+            <div class="registration_input">{{ form_widget(form.email) }}</div>
+        </div>
+
+        <div>
+            <div class="registration_label">{{ form_label(form.plainPassword.first, 'Пароль:') }}</div>
+            {{ form_errors(form.plainPassword.first) }}
+            <div class="registration_input">{{ form_widget(form.plainPassword.first) }}</div>
+        </div>
+
+        <div>
+            <div class="registration_label">{{ form_label(form.plainPassword.second, 'Повтор пароля:') }}</div>
+            {{ form_errors(form.plainPassword.second) }}
+            <div class="registration_input">
+                {{ form_widget(form.plainPassword.second) }}
+            </div>
+        </div>
+
+        <div>
+            <div class="registration_label">{{ form_label(form.firstname, 'Имя:') }}</div>
+            {{ form_errors(form.firstname) }}
+            <div class="registration_input">{{ form_widget(form.firstname) }}</div>
+        </div>
+
+
+        <div>
+            <div class="registration_label">{{ form_label(form.lastname, 'Фамилия:') }}</div>
+            {{ form_errors(form.lastname) }}
+            <div class="registration_input">{{ form_widget(form.lastname) }}</div>
+        </div>
+
+        <div>
+            <div class="registration_label">{{ form_label(form.phone, 'Номер телефона:') }}</div>
+            {{ form_errors(form.phone) }}
+            <div class="registration_input">{{ form_widget(form.phone) }}</div>
+        </div>
+
+
+        <div>
+            <div class="registration_label">{{ form_label(form.address, 'Домашний адрес:') }}</div>
+            {{ form_errors(form.address) }}
+            <div class="registration_input">{{ form_widget(form.address) }}</div>
+        </div>
+
+
+
+        {{ form_rest(form) }}
+        <div class="registration_submit">
+            <button type="submit" class="button_register">{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</button>
+        </div>
+    </div>
+</form>

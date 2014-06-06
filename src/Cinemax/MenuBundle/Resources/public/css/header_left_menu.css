@@ -1,0 +1,109 @@
+/*left_header_menu*/
+#left_header_menu ul
+{
+    margin: -4% 12%;
+    float: left;
+    z-index: 2;
+    position: relative;
+
+}
+#left_header_menu .item_menu
+{
+    margin-bottom: 18px;
+}
+#left_header_menu  span
+{
+    color: #ffffff;
+    display: block;
+    position: absolute;
+    margin: -28px 20px;
+    font-size: 19px;
+}
+#left_header_menu .menu_border
+{
+    border: 1px #f9b655 solid;
+    width: 262px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #1f180e;
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari, Chrome */
+    -khtml-border-radius: 5px; /* KHTML */
+    opacity: 0.5;
+    -moz-opacity: 0.5; /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0.5; /* Konqueror 3.1, Safari 1.1 */
+    filter: alpha(opacity=50);
+}
+#left_header_menu .menu_image_hover
+{
+    background: url("../images/left_header_menu_hover.png") no-repeat;
+    width: 280px;
+    position: absolute;
+    margin: -41px -8px;
+    height: 50px;
+    visibility: hidden;
+}
+#left_header_menu li:hover div.menu_image_hover
+{
+    visibility: visible;
+}
+.item_margin_cat
+{
+    position: relative;
+    left: -10px;
+}
+.item_margin_tr
+{
+    position: relative;
+    left: -20px;
+}
+.item_margin_st_ct
+{
+    position: relative;
+    left: -25px;
+}
+.item_margin_vd
+{
+    position: relative;
+    left: -20px;
+}
+.item_margin_ms
+{
+    position: relative;
+    left: -10px;
+}
+.item_margin_fg
+{
+    position: relative;
+    left: 0px;
+}
+.item_margin_of
+{
+    position: relative;
+    left: 15px;
+}
+.item_menu_line
+{
+    background: url("../images/item_menu_line.png") no-repeat;
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    margin: -18px -25px;
+}
+/*end of left_header_menu*/
+/* middle header slider*/
+
+#mid_picture span
+{
+    display: inline-block;
+}
+#mid_picture span:nth-child(1)
+{
+    color:  #ff0f0f;
+    font-weight: bold;
+    float: left;
+    position: relative;
+    margin: -4% -2%;
+    display: block;
+}
+/*end of middle header slider*/

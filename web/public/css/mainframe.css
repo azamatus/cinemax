@@ -1,0 +1,351 @@
+* {
+    color: #FFC974;
+    font-family: Calibri;
+    margin: 0 auto;
+}
+body {
+    background: url("../images/bg.png") repeat scroll center center #000000;
+    border: 2px solid #F2E297;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 1110px;
+}
+.logo
+{
+    border: none;
+}
+a, a:hover, a:link, a:visited img {
+    text-decoration: none;
+    outline: none;
+}
+.clearbox
+{
+    clear: both;
+}
+img, div {
+}
+.year {
+    float: left;
+    margin: -30px -4px;
+    position: relative;
+    z-index: 4;
+}
+.header_logo {
+    float: left;
+    margin: -24px -55px;
+    position: relative;
+    z-index: 3;
+}
+.logo_shadow {
+    background: url("../images/logo_shadow.png") no-repeat;
+    height: 253px;
+    margin: -25px 45px;
+    position: absolute;
+    width: 725px;
+}
+.header_picture {
+    background: url("../images/bullets.png") no-repeat scroll 0 0, url("../images/header_picture1.png") no-repeat;
+    float: right;
+    height: 427px;
+    margin: -35px -20px;
+    position: relative;
+    width: 465px;
+    z-index: 4;
+}
+.header_title {
+    color: #FEB957;
+    display: block;
+    float: right;
+    margin: -25px -40px;
+    position: relative;
+    text-align: center;
+    z-index: 5;
+}
+.line {
+    background: url("../images/line.png") no-repeat;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 6px;
+    position: relative;
+    width: 974px;
+    z-index: 1;
+}
+.line2 {
+    border-right: 1px solid #8A8989;
+    float: right;
+    height: 150px;
+    margin-right: 8px;
+    margin-top: -8px;
+    position: relative;
+    width: 1px;
+    z-index: 2;
+}
+.left_bg {
+    background: url("../images/left_bg.png") no-repeat;
+    float: left;
+    height: 907px;
+    margin: -25px 1px;
+    position: absolute;
+    width: 170px;
+    z-index: 2;
+}
+.pipe {
+    background: url("../images/pipe.png") no-repeat;
+    height: 20px;
+    position: absolute;
+    top: 235px;
+    width: 740px;
+    z-index: 3;
+}
+#projectors {
+    background: url("../images/projectors_no_light.png") no-repeat;
+    height: 105px;
+    margin-left: 10px;
+    position: absolute;
+    top: 240px;
+    width: 120px;
+    z-index: 3;
+}
+.projectors_light {
+    background: url("../images/projectors_light.png") no-repeat;
+    display: none;
+    float: right;
+    height: 150px;
+    margin: 248px 58px;
+    position: absolute;
+    width: 230px;
+    z-index: 3;
+}
+.date_position {
+    clear: right;
+    color: #FFE88B;
+    float: left;
+    margin: -25px 10px;
+    position: relative;
+    text-align: center;
+    z-index: 4;
+}
+.menu_catalog {
+    background: url("../images/menu_images/catalog.png") no-repeat;
+}
+.menu_catalog:hover {
+    background: url("../images/menu_images/catalog_hover.png") no-repeat;
+}
+.menu_title {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+.menu_galery {
+    background: url("../images/menu_images/gallery.png") no-repeat;
+}
+.menu_galery:hover {
+    background: url("../images/menu_images/gallery_hover.png") no-repeat;
+}
+.menu_margins {
+    height: 52px;
+    margin-top: 17px;
+    width: 77px;
+}
+.float_left {
+    float: left;
+}
+.menu_catalog, .menu_title:focus
+{
+    outline: none;
+}
+.no_outline
+{
+    outline: none;
+}
+.item_margins {
+    margin-right: 12px;
+    position: relative;
+    z-index: 4;
+}
+
+.menu_trailers {
+    background: url("../images/menu_images/trailers.png") no-repeat;
+    margin-right: 4px;
+}
+.menu_trailers:hover {
+    background: url("../images/menu_images/trailers_hover.png") no-repeat;
+    margin-right: 4px;
+}
+.menu_novinki {
+    background: url("../images/menu_images/novinki.png") no-repeat;
+}
+.menu_novinki:hover {
+    background: url("../images/menu_images/novinki_hover.png") no-repeat;
+}
+.menu_sotrudniki {
+    background: url("../images/menu_images/sotrudniki.png") no-repeat;
+    height: 62px;
+    margin-top: 7px;
+}
+.menu_sotrudniki:hover {
+    background: url("../images/menu_images/sotrudniki_hover.png") no-repeat;
+    height: 62px;
+    margin-top: 7px;
+}
+.menu_about_us {
+    background: url("../images/menu_images/aboutUs.png") no-repeat;
+}
+.menu_about_us:hover {
+    background: url("../images/menu_images/aboutUs_hover.png") no-repeat;
+}
+#main-header-menu {
+    background: url("../images/header_menu_bg.png") no-repeat;
+    float: right;
+    height: 110px;
+    margin: -30px 205px;
+    position: relative;
+    top: -140px;
+    width: 760px;
+}
+ul {
+    list-style: none outside none;
+}
+#main-header-menu ul li {
+    float: left;
+}
+#main-header-menu span {
+    display: block;
+}
+.header_definition
+{
+    position: relative;
+    top: -80px;
+}
+.definition {
+    color: #FFFFFF;
+    margin-left: 175px;
+    margin-top: -28px;
+    position: relative;
+    z-index: 4;
+}
+.definition_bg {
+    background: url("../images/definition_bg.png") no-repeat;
+    height: 30px;
+    margin-left: 20%;
+    position: relative;
+    width: 715px;
+}
+.definition > span {
+    color: #FEB957;
+}
+.float_right {
+    float: right;
+}
+.reklama
+{
+    float: right;
+    position: relative;
+    top: 120px;
+    right: 55px;
+}
+.reklama img{
+    border: 2px solid;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.main_hr
+{
+    position: relative;
+    top: 55px;
+    border: none;
+    height: 2px;
+    background-color: #F2E297;
+}
+@-moz-document url-prefix()/*Firefox*/
+{
+  .main_hr
+    {
+       position: relative;
+       top: 48px;
+    }
+}
+footer
+{
+    margin-top: 90px
+}
+.phones
+{
+    position: relative;
+    left: 70px;
+    top: 10px;
+}
+.phones span
+{
+   display: block;
+   color: #ffffff;
+   padding: 3px 20px;
+}
+.phone_icon
+{
+    background: url("../images/phone_icon.png") no-repeat;
+    background-position: 0 4px ;
+}
+.cinemax_info
+{
+    background: url(../images/footer_bg.png) repeat-x;
+    position: relative;
+    top: 29px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    width: 1050px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-right-radius: 5px;
+    -moz-border-right-radius: 5px;
+    -webkit-border-left-radius: 5px;
+    -moz-border-left-radius: 5px;
+    height: 26px;
+}
+.cinemax_info div
+{
+    font-size: 15px;
+    color: #ffffff;
+}
+.email
+{
+    padding: 5px 45px;
+}
+.author
+{
+    text-align: right;
+    margin-right: 60px;
+    padding-top: 5px;
+}
+.footer_logo
+{
+    background: url("../images/footer_logo.png") no-repeat;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    margin: 40px 40px;
+}
+.flash-notice {
+    font-size: 20px;
+    font-weight: bold;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #FFC974;
+    text-transform: uppercase;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #FFC974;
+    text-transform: uppercase;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #FFC974;
+    text-transform: uppercase;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #FFC974;
+    text-transform: uppercase;
+}

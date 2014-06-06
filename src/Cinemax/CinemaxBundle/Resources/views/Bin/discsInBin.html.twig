@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    Корзина
+{% endblock %}
+{% block stylesheets %}
+   {{ parent() }}
+    <link href="{{ asset('bundles/cinemax/css/bin.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="bin">
+        {% if discs %}
+            <a name="bin"></a>
+            <span>Корзина:</span>
+            {% set totalPrice = 0 %}
+            <form method="post" action="{{ path('cinemax_bin_form') }}#order_page">
+            <ul class="bin_title">
+                <li>Диск:</li>
+                <li>Цена:</li>
+                <li>Количество:</li>
+                <li>Итого:</li>
+            </ul>
+            <table class="bin_table">
+            {% for disc in discs %}
+                {% set count = attribute(discsCount,disc.id) %}
+                {% set totalPrice = totalPrice + disc.price * attribute(discsCount,disc.id)  %}
+                 <tr id="{{ disc.id }}" class="bin_disc">
+                    <td>
+                        {#{% media disc.poster, 'big' with {'class':'in_bin_poster'} %}#}
+                        {% for galleryHasMedia in disc.poster.GalleryHasMedias %}
+                        <img class="in_bin_poster" src="{% path galleryHasMedia.media, 'posters_small' %}" />
+                        {% endfor %}
+                        <div class="disc_info">
+                        <span>{{ disc.name }}</span><br>
+                        <span>{{ disc.format }}</span><br>
+                        <span>{{ disc.producer }}</span>
+                        </div>
+                    </td>
+                     <td>
+                         <span>{{ disc.price }} сомов</span>
+                     </td>
+                    <td>
+                        <div class="disc_count_block">
+                            <div class="disc_counter disc_rem" onmousedown="return false"></div>
+                            <input class="disc_input" type="text" id="{{ disc.id }}" value="{{ count }}"name="bin[{{ disc.id }}]"/>
+                            <div class="disc_counter disc_add" onmousedown="return false"></div>
+                            <div class="disc_total_price" id="discTotal_{{ disc.id }}">
+                                  <span class="som">{{ (disc.price * count) }}</span>
+                                  <span>сомов</span>
+                                <span data-id={{ disc.id }} class="bin_remove bin_remove_disc"></span>
+                            </div>
+                        </div>
+                    </td>
+                 </tr>
+             {% endfor %}
+            <tr class="bin_line"></tr>
+            <tr class="discs_total_price">
+                <td></td>
+                <td ></td>
+                <td class="in_all">
+                    <span>Всего:</span>
+                    <span class="total_value"> {{ totalPrice }}</span>
+                    <span>сомов</span>
+                </td>
+            </tr>
+                <tr class="clearbox bin_submit">
+                    <td class="float_left">
+                        <input class="bin_button" type="submit" value="Продолжить выбор" name="button_bin"/>
+                    </td>
+                    <td></td>
+                    <td class="float_right">
+                       <input class="bin_button" type="submit" value="Оформить заказ" name="button_bin"/>
+                    </td>
+                </tr>
+            </table>
+            </form>
+            {% else %}
+            <span>Корзина пуста</span>
+         {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    Оформление заказа
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset("bundles/cinemax/css/order_page.css") }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="order_position">
+        <a name="order_page"></a>
+        <span>Форма оформления заказа</span>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flashMessage }}
+                </div>
+            {% else %}
+            <form action="{{ path("cinemax_order") }}" method="post" id="order_form">
+                <div id="order-form-fio">
+                    {{ form_label(form.fio) }}
+                    {{ form_widget(form.fio) }}
+                </div>
+                <div id="order-form-phone">
+                    {{ form_label(form.phone) }}
+                    {{ form_widget(form.phone) }}
+                </div>
+                <div id="order-form-email">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
+                <div id="order-form-address">
+                    {{ form_label(form.address) }}
+                    {{ form_widget(form.address) }}
+                </div>
+                {{ form_errors(form) }}
+                {{ form_rest(form) }}
+                <input type="submit" value="Сохранить" class="link-btn">
+            </form>
+        {% endfor %}
+    </div>
+{% endblock %}

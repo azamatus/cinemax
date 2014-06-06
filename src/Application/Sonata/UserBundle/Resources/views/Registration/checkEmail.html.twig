@@ -1,0 +1,6 @@
+{% extends "ApplicationSonataUserBundle::registration.html.twig" %}
+
+{% block fos_user_content %}
+    <a name="check_page"></a>
+    <p class="check_email">{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+{% endblock fos_user_content %}

@@ -1,0 +1,8 @@
+<a href="#anchor"></a>
+<div>
+    {% for disc in pagination %}
+        {% include "CinemaxBundle:content:item.html.twig" with {'disc':disc} %}
+    {% endfor %}
+</div>
+
+

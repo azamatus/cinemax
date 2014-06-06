@@ -1,0 +1,25 @@
+cinemax_bin_ajax_add_disc:
+    pattern: add/ajax/{id}/
+    defaults: { _controller: CinemaxBundle:Bin:addAjaxBin}
+    requirements:
+      id: \d+
+
+cinemax_bin_discs:
+    pattern: /
+    defaults: { _controller: CinemaxBundle:Bin:bin }
+
+cinemax_bin_form:
+    pattern: /bin_form/
+    defaults: { _controller: CinemaxBundle:Bin:binForm }
+
+cinemax_order:
+    pattern: /order/
+    defaults: { _controller: CinemaxBundle:Bin:binOrder }
+
+cinemax_bin_delete_disc:
+    pattern: /delete/{id}/
+    defaults: { _controller: CinemaxBundle:Bin:delAjaxBin}
+    requirements:
+        id: \d+
+    options:
+        expose: true

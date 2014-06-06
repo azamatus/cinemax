@@ -1,0 +1,27 @@
+cinemax_homepage:
+    pattern:  /
+    defaults: { _controller: CinemaxBundle:Main:index }
+
+cinemax_bin:
+    resource: "@CinemaxBundle/Resources/config/routing/bin.yml"
+    prefix:   /bin
+
+cinemax_all_catalog:
+    pattern: /all_catalog/
+    defaults: { _controller: CinemaxBundle:Content:getAllCatalog }
+
+cinemax_sort_by_type:
+    pattern: /sorting/{type}/
+    defaults: { _controller: CinemaxBundle:Content:sortByType }
+
+cinemax_novinki:
+    pattern: /novelties/
+    defaults: { _controller: CinemaxBundle:Content:getNovelties }
+
+cinemax_disc_info:
+    pattern: /disc/{id}/
+    defaults: { _controller: CinemaxBundle:Content:getInfo }
+
+mail:
+    pattern:  /mail
+    defaults: { _controller: CinemaxBundle:Bin:sendEmail }

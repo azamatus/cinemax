@@ -1,0 +1,30 @@
+{% if disc.active == 1 %}
+<div class="description">
+    {#<a href="#" class="float_left">{% thumbnail  disc.poster, 'big' with {'class' : 'slider_disc'}%}</a>#}
+    <a href="{{ path('cinemax_disc_info', {'id':disc.id }) }}#info" class="float_left slider_disc">{{ disc.poster|galleryThumb('posters_small') }}</a>
+    <div class="opacity"></div>
+    <div class="slider_description">
+        <span>Описание диска</span>
+        <div class="disc_desc">
+            <ul>
+                <li><span>Название диска: </span>{{ disc.name }}</li>
+                <li><span>Описание диска: </span>{{ disc.description }}</li>
+                <li><span>Страна: </span>{{ disc.country }}</li>
+                <li><span>Формат: </span>{{ disc.format }}</li>
+                <li>{% if disc.type == 'Film' or disc.type == "Multfilm"%}<span>Количество фильмов: </span>{{ disc.quantityFilms }}{% endif %}</li>
+                <li>{% if disc.type == 'Serial' or disc.type =="Multserial" %}<span>Количество серий: </span>{{ disc.quantitySeries }}{% endif %}</li>
+                <li>{% if disc.type == 'Clip' %}<span>Количество клипов: </span>{{ disc.quantityClips }}{% endif %}</li>
+                <li><span>Производитель: </span>{{ disc.producer }}</li>
+                <li><span>Дата выпуска: </span>Уже в продаже</li>
+                <li><span>Перевод: </span>{{ disc.translation  }}</li>
+                <li><span>Цена: </span>{{ disc.price }} сомов</li>
+            </ul>
+        </div>
+        <a href="{{ path('cinemax_bin_ajax_add_disc', {'id':disc.id }) }}" class="korzina" onclick="return false;"><p>Заказать</p></a>
+        <a href="{{ path('cinemax_bin_discs')}}#bin" class="to_bin"><p>Перейти в корзину</p></a>
+    </div>
+</div>
+{% endif %}
+
+
+
