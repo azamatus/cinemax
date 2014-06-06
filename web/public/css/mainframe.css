@@ -243,7 +243,7 @@ ul {
 {
     float: right;
     position: relative;
-    top: 120px;
+    top: 90px;
     right: 55px;
 }
 .reklama img{
@@ -348,4 +348,29 @@ footer
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #FFC974;
     text-transform: uppercase;
+}
+.search
+{
+    float: right;
+    position: relative;
+    top: 100px;
+    left: -25px;
+}
+.search_icon
+{
+    background: url("../images/search_ico.png") no-repeat;
+    border: none;
+    width: 18px;
+    height: 23px;
+    vertical-align: middle;
+    position: relative;
+    right: 35px;
+    bottom: 2px;
+    cursor: pointer;
+}
+.not_founded
+{
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 24px;
 }

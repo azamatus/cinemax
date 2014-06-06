@@ -14,11 +14,11 @@
         <div style="position: relative;">
         <div class="sort_header">Сортировка по типам</div>
         <ul class="layout_sort">
-            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Film'}) }}#catalog">Фильм&nbsp</a></li>
-            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Multfilm'}) }}#catalog">Мультфильм&nbsp</a></li>
-            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Clip'}) }}#catalog">Клип&nbsp</a></li>
-            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Serial'}) }}#catalog">Сериал&nbsp</a></li>
-            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Multserial'}) }}#catalog">Мультсериал</a></li>
+            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Фильм'}) }}#catalog">Фильм&nbsp</a></li>
+            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Мультфильм'}) }}#catalog">Мультфильм&nbsp</a></li>
+            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Клип'}) }}#catalog">Клип&nbsp</a></li>
+            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Сериал'}) }}#catalog">Сериал&nbsp</a></li>
+            <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Мультсериал'}) }}#catalog">Мультсериал</a></li>
         </ul>
         </div>
         <div class="catalog_to_bin"><a href="{{ path('cinemax_bin_discs')}}#bin"><p>Перейти в корзину</p></a></div>
@@ -27,8 +27,10 @@
                 {% include  "CinemaxBundle:content:item.html.twig" with { 'disc': disc } %}
             {% endfor %}
         </div>
+        {% if count >= 12 %}
         <div class="paginate">
             {{ knp_pagination_render(pagination) }}
         </div>
+        {% endif %}
     </div>
 {% endblock %}

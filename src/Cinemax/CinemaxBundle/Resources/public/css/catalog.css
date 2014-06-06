@@ -129,7 +129,7 @@
 }
 .all_catalog
 {
-    border: 1px solid;
+    border: 2px solid;
     width: 1040px;
     margin-top: 140px;
     height: 666px;
@@ -223,7 +223,7 @@
 }
 .pagination
 {
-    padding-top: 1px;
+    padding-top: 3px;
     position: relative;
     left: -30px;
 }
