@@ -8,16 +8,16 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 
 #}
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "::base.html.twig" %}
 {% block title %}
     {{ parent() }} : {{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}
 {% endblock %}
 
-{% block fos_user_content %}
-<div class="span9">
+{% block body %}
+<div class="edit_block">
 <div class="sonata-user-edit-profile register">
-    <div class="titleHeader clearfix">
-        <h3>{{ "my_account" | trans({}, 'SonataUserBundle')}}</h3>
+    <div class="titleHeader">
+        <h2>{{ "my_account" | trans({}, 'SonataUserBundle')}}</h2>
     </div><!--end titleHeader-->
 
     {{ form_errors(form) }}
@@ -30,47 +30,32 @@ file that was distributed with this source code.
     {% endblock field_row %}
 
     <form action="{{ path('sonata_user_profile_edit') }}" method="POST" class="form-horizontal">
-    <h4>&nbsp;&nbsp;&nbsp;&nbsp;{{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}</h4>
+    <h3 style="margin-bottom: 10px">&nbsp;&nbsp;&nbsp;&nbsp;{{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}</h3>
         <div class="control-group">
             {{ form_label(form.firstname, 'form.label_firstname'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.firstname) }}</div>
+            <div class="controls">{{ form_widget(form.firstname, {'attr': {'class': 'login_password'}}) }}</div>
         </div>
         <div class="control-group">
             {{ form_label(form.lastname, 'form.label_lastname'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.lastname) }}</div>
+            <div class="controls">{{ form_widget(form.lastname, {'attr': {'class': 'login_password'}}) }}</div>
         </div>
         <div class="control-group">
-            {{ form_label(form.website , 'form.label_website'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.website) }}</div>
-        </div>
-        <div class="control-group">
+            <div class="select_style">
             {{ form_label(form.dateOfBirth, 'form.label_date_of_birth'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            {{ form_widget(form.dateOfBirth, {'attr': {'class': 'controls, span1'}}) }}
-        </div>
-        <div class="control-group">
-            {{ form_label(form.biography, 'form.label_biography'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.biography) }}</div>
-        </div>
-        <div class="control-group">
-            {{ form_label(form.timezone, 'form.label_timezone'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.timezone) }}</div>
-        </div>
-        <div class="control-group">
-            {{ form_label(form.gender, 'form.label_gender' | trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.gender) }}</div>
+            {{ form_widget(form.dateOfBirth) }}
+            </div>
         </div>
         <div class="control-group">
             {{ form_label(form.phone, 'form.label_phone'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.phone) }}</div>
+            <div class="controls">{{ form_widget(form.phone, {'attr': {'class': 'login_password'}}) }}</div>
         </div>
         <div class="control-group">
             {{ form_label(form.address, 'form.label_address'| trans({}, 'SonataUserBundle'), {'label_attr': {'class': 'control-label'}}) }}
-            <div class="controls">{{ form_widget(form.address) }}</div>
+            <div class="controls">{{ form_widget(form.address, {'attr': {'class': 'login_password'}}) }}</div>
         </div>
+        <div style="display: none">{{ form_rest(form) }}</div>
         <div class="control-group">
-            <div class="controls">
-                <input type="submit" name="submit" class=" btn btn-primary" value="{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}" />
-            </div>
+                <input type="submit" name="submit" class="button_register" value="{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}" />
         </div>
     </form>
 </div>

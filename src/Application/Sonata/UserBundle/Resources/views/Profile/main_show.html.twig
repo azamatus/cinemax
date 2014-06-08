@@ -1,0 +1,7 @@
+<div class="user_profile">
+    <h3>{{ "my_account" | trans({}, 'SonataUserBundle')}}</h3>
+    <ul class="account_list">
+        <li><a href="{{ path('sonata_user_profile_edit') }}" class="invarseColor">{{ "link_edit_profile" | trans({}, 'SonataUserBundle') }}</a></li>
+        <li><a href="{{ path('fos_user_change_password') }}" class="invarseColor">{{ "change_password.submit" | trans({}, 'FOSUserBundle') }}</a></li>
+    </ul>
+</div>

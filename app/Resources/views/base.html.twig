@@ -121,6 +121,7 @@
         {% block login %}
             <div class="log_reg">
             {% if app.user and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="user_block">
                 <div class="user_login">
                     <div class="float_left">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                     |
@@ -132,6 +133,8 @@
                      </a>
                     </div>
                 </div>
+                {% include  "ApplicationSonataUserBundle:Profile:main_show.html.twig"  %}
+                 </div>
             {% else %}
                 <a href="{{ path('fos_user_registration_register') }}#reg" class="register">
                     <div class="user_registration"></div>
@@ -144,6 +147,8 @@
             {% endif %}
             </div>
         {% endblock %}
+        {#{% block profile %}#}
+        {#{% endblock %}#}
         <div class="reklama">
             <img src="{{ asset('public/images/cinemax_anime.gif') }}"/>
         </div>
