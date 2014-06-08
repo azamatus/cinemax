@@ -17,26 +17,47 @@
     margin-right: 40px;
     margin-top: 5px;
     padding-left: 10px;
+    font-size: 16px;
 }
 .registration_blocks
 {
     position: relative;
     left: 15%;
 }
-.registration_block > p{
-    text-align: center ;
-    font-size: 20px;
-    font-weight: bold;
-}
-.registration_label
-{
+.registration_block label{
     float: left;
     width: 130px;
     text-align: right;
     margin-right: 15px;
     padding-top: 11px;
-
 }
+.registration_block ul{
+    position: relative;
+    left: 110px;
+}
+.registration_block ul li{
+    color: red;
+}
+.registration_block > p{
+    text-align: center ;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid;
+    padding: 40px 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+}
+/*.registration_label*/
+/*{*/
+    /*float: left;*/
+    /*width: 130px;*/
+    /*text-align: right;*/
+    /*margin-right: 15px;*/
+    /*padding-top: 11px;*/
+/*}*/
 
 .label_registration{
     position: relative;
@@ -44,6 +65,9 @@
     text-align: center;
     font-size: 20px;
     text-transform: uppercase;
+}
+.label_registration + ul{
+    top: -20px;
 }
 .fos_user_registration_register span {
     color: red;
@@ -60,6 +84,7 @@
     margin-top: 10px;
     width: 130px;
     text-transform: uppercase;
+    font-size: 16px;
 }
 .button_register:hover {
     cursor: pointer;
@@ -148,9 +173,80 @@ a:hover .user_registration_hover {
     width: 30px;
 }
 .user_login {
-    float: right;
-    margin-right: 60px;
-    margin-top: -10px;
+
+}
+.user_block{
+    border: 2px solid;
+    margin: 15px 65px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 40px 45px;
+    border-radius: 4px;
+}
+.account_list{
+    margin-top: 5px;
+}
+.user_block a:hover{
+    color: #ffffff;
+}
+.edit_block{
+    text-align: center;
+    position: relative;
+    top: 70px;
+    border: 2px solid;
+    width: 840px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+.select_style select:nth-child(1){
+    /*border: 1px solid;*/
+    overflow: hidden;
+    background: url("../images/down-arrow-orange.png") no-repeat right rgba(0, 0, 0, 0.5);
+    background-size: 13px;
+    /*width: 240px;*/
+}
+.select_style select:nth-child(2){
+    /*border: 1px solid;*/
+    overflow: hidden;
+    background: url("../images/down-arrow-orange.png") no-repeat right rgba(0, 0, 0, 0.5);
+    background-size: 13px;
+    /*width: 240px;*/
+}
+.select_style select:nth-child(3){
+    /*border: 1px solid;*/
+    overflow: hidden;
+    background: url("../images/down-arrow-orange.png") no-repeat right rgba(0, 0, 0, 0.5);
+    background-size: 13px;
+    /*width: 240px;*/
+}
+.select_style select{
+    border-radius: 4px;
+    padding: 5px;
+    border: 2px solid;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 92px;
+    font-size: 16px;
+}
+.control-group ul li
+{
+    color: red;
+    margin-bottom: 10px;
+}
+.control-label{
+    margin-bottom: 5px;
+    display: block;
+}
+.titleHeader h2{
+    text-align: left;
+    color: red;
+    margin-bottom: 10px;
+}
+.select_style select option{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.user_profile{
+    top: 20px;
+    position: relative;
 }
 .forgot_password
 {
@@ -190,6 +286,7 @@ a:hover .user_registration_hover {
     margin: 5px 40px 5px -10px;
     padding-left: 10px;
     width: 260px;
+    font-size: 16px;
 }
 .reset_button
 {
@@ -272,8 +369,50 @@ a:hover .user_registration_hover {
     top: -290px;
     left: 40px;
 }
+.for_users_description ul{
+    left: 0;
+}
 .for_users_description *
 {
-    color: #ffffff;
+    color: #ffffff!important;
     list-style: disc;
+}
+.fos_user_resetting_reset input{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    width: 260px;
+    font-size: 16px;
+}
+.fos_user_resetting_reset input[type=submit]{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFC974;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    height: 25px;
+    width: 180px;
+    text-transform: uppercase;
+    font-size: 16px;
+    position: relative;
+    left: 145px;
+}
+.fos_user_resetting_reset input[type=submit]:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 1);
+    border: 2px solid #FFC974;
+}
+#fos_user_resetting_form ul{
+    left: 0;
+    top: -5px;
+}
+#fos_user_resetting_form_new_second{
+    margin-top: 14px;
 }
