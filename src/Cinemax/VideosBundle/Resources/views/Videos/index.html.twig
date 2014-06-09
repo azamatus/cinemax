@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    {{ parent() }} : Трейлеры
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <a name="trailers"></a>
+    <div class="all_catalog">
+        <span>Трейлеры</span>
+
+        <div style="position: relative;">
+            <div class="sort_header"></div>
+        </div>
+        <div class="all_catalog_inner_border trailers">
+            {% for trailer in pagination %}
+                <div class="float_left disc">
+                    <a href="{{ path('trailer_get_popup', {'id':trailer.id}) }}" class="trailer" rel="colorbox">{% thumbnail trailer.video, 'small' %}</a>
+                    <span>{{ trailer.name }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="paginate">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

@@ -27,10 +27,8 @@
                 {% include  "CinemaxBundle:content:item.html.twig" with { 'disc': disc } %}
             {% endfor %}
         </div>
-        {% if count >= 12 %}
         <div class="paginate">
             {{ knp_pagination_render(pagination) }}
         </div>
-        {% endif %}
-    </div>
+     </div>
 {% endblock %}

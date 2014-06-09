@@ -58,8 +58,8 @@ class AppKernel extends Kernel
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle()
-
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Cinemax\VideosBundle\CinemaxVideosBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

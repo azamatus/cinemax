@@ -59,5 +59,6 @@ $(document).ready(function(){
             easing : true
         });
 
+    $(".trailer").colorbox({rel:'group1', transition:"fade", width:"45%", minHeight:"75%", current: false});
 });
 

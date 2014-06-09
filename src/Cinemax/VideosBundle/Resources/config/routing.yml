@@ -1,0 +1,7 @@
+cinemax_trailers:
+    path:  /trailers/
+    defaults: { _controller: CinemaxVideosBundle:Videos:index }
+
+trailer_get_popup:
+    path: /trailer/{id}/
+    defaults: { _controller: CinemaxVideosBundle:Videos:showTrailer }
