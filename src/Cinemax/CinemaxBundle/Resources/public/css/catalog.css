@@ -285,3 +285,29 @@
     height: auto;
     border: 2px solid;
 }
+.trailers img{
+    width: 225px;
+    height: 175px;
+    border: 2px solid #ffee9f;
+}
+.trailers span{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+.trailers .disc{
+    margin-right: 19px!important;
+}
+.popup_trailer{
+    text-align: center;
+}
+.popup_trailer h2, h3{
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.trailer_description{
+    color: #FFC974;
+    text-align: left;
+    margin: 10px 75px;
+    width: 80%;
+}

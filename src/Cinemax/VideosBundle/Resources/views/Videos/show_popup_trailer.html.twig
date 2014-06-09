@@ -1,0 +1,11 @@
+<link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
+<div class="popup_trailer">
+<h2>{{ trailer.name }}</h2>
+
+{% media trailer.video, 'normal' %}
+
+<div class="trailer_description">
+    <h3>Описание</h3>
+    <p>{{ trailer.description }}</p>
+</div>
+</div>

@@ -6,6 +6,7 @@ imports:
     - { resource: @CinemaxHeaderSliderBundle/Resources/config/admin.xml }
     - { resource: @CinemaxBundle/Resources/config/admin.xml }
     - { resource: @CinemaxFeedbackBundle/Resources/config/admin.xml }
+    - { resource: @CinemaxVideosBundle/Resources/config/admin.xml }
 
 framework:
     trusted_proxies: ['127.0.0.1', '10.0.0.1'] # a list of proxy IPs you trust
