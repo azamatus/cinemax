@@ -10,31 +10,28 @@
 {% block body %}
     <a name="aftersearch"></a>
     <div class="all_catalog">
-        <span>Результаты поиска</span>
+        <span class="catalog_title">Результаты поиска</span>
         <div style="position: relative;">
             <div class="sort_header"></div>
         </div>
-        <div class="catalog_to_bin"><a href="{{ path('cinemax_bin_discs')}}#bin"><p>Перейти в корзину</p></a></div>
+        <div class="catalog_to_bin catalog_title"><a href="{{ path('cinemax_bin_discs')}}#bin"><p>Перейти в корзину</p></a></div>
         {% if pagination|length %}
                 <div class="all_catalog_inner_border">
                     {% for disc in pagination %}
                         {% include  "CinemaxBundle:content:item.html.twig" with { 'disc': disc } %}
                     {% endfor %}
                 </div>
-                {% if count >= 12 %}
-                    <div class="paginate">
+                <div class="paginate">
                         {{ knp_pagination_render(pagination) }}
-                    </div>
-                {% endif %}
-                <!--end pagination-->
+                </div>
 
-            {% else %}
+        {% else %}
                 <div class="all_catalog_inner_border">
                     <div class="not_founded">
                         <span>По вашему запросу ничего не найдено</span>
                     </div>
                 </div>
-           {% endif %}
+         {% endif %}
 
     </div>
 {% endblock %}

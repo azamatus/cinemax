@@ -2,7 +2,7 @@
 <div class="disc float_left">
     {#<a href="#" class='disc_poster'> {% media  disc.poster, 'big' with {'class': 'poster'}%}<br>#}
     {#<a href="#" class='disc_poster'> {{ disc.poster|galleryThumb('posters_small') }}<br>#}
-    <a href="#" class='disc_poster'>
+    <a class='disc_poster'>
         {% for galleryHasMedia in disc.poster.GalleryHasMedias %}
               <img src="{% path galleryHasMedia.media, 'posters_small' %}" />
         {% endfor %}<br>

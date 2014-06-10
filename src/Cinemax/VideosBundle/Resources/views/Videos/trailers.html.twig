@@ -8,16 +8,17 @@
 {% endblock %}
 {% block body %}
     <a name="trailers"></a>
-    <div class="all_catalog">
-        <span>Трейлеры</span>
+    <div class="all_catalog" style="height: 840px">
+        <span class="catalog_title">Трейлеры фильмов</span>
 
         <div style="position: relative;">
             <div class="sort_header"></div>
         </div>
-        <div class="all_catalog_inner_border trailers">
+        <div class="all_catalog_inner_border trailers" style="height: 790px">
             {% for trailer in pagination %}
                 <div class="float_left disc">
                     <a href="{{ path('trailer_get_popup', {'id':trailer.id}) }}" class="trailer" rel="colorbox">{% thumbnail trailer.video, 'small' %}</a>
+                    <p>Трейлер фильма:</p>
                     <span>{{ trailer.name }}</span>
                 </div>
             {% endfor %}

@@ -132,6 +132,7 @@
     margin: -3px 4px;
     outline: none;
     background-color: rgba(255, 255, 255, 0.05);
+    font-size: 16px;
  }
 .disc_count_block
 {
@@ -181,8 +182,9 @@
 .discs_total_price td span
 {
     color: red;
-    font-size: 19px;
+    font-size: 20px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 .discs_total_price td span:nth-child(1)
 {
@@ -224,6 +226,7 @@
     width: 190px;
     text-transform: uppercase;
     cursor: pointer;
+    font-size: 16px;
 }
 .bin_button:hover
 {
@@ -238,4 +241,13 @@
     position: absolute;
     right: -37px;
     top: -35px;
+}
+.catalog_title{
+    border: 1px solid #FFC974;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0 20px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    display: inline-block!important;
 }

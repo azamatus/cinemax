@@ -16,9 +16,9 @@ class VideosController extends Controller
         $pagination = $paginator
             ->paginate($videos,
                 $this->get('request')->query->get('page', 1),
-                12
+                9
             );
-        return $this->render('CinemaxVideosBundle:Videos:index.html.twig', array('pagination'=>$pagination));
+        return $this->render('CinemaxVideosBundle:Videos:trailers.html.twig', array('pagination'=>$pagination));
     }
 
     public function showTrailerAction($id){

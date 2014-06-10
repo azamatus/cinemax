@@ -10,7 +10,7 @@
 {% block body %}
     <a name="catalog"></a>
     <div class="all_catalog">
-        <span>{{ title }}</span>
+        <span class="catalog_title">{{ title }}</span>
         <div style="position: relative;">
         <div class="sort_header">Сортировка по типам</div>
         <ul class="layout_sort">
@@ -21,7 +21,7 @@
             <li class="float_left"><a href="{{ path('cinemax_sort_by_type', {'type':'Мультсериал'}) }}#catalog">Мультсериал</a></li>
         </ul>
         </div>
-        <div class="catalog_to_bin"><a href="{{ path('cinemax_bin_discs')}}#bin"><p>Перейти в корзину</p></a></div>
+        <div class="catalog_to_bin catalog_title"><a href="{{ path('cinemax_bin_discs')}}#bin"><p>Перейти в корзину</p></a></div>
         <div class="all_catalog_inner_border">
             {% for disc in pagination %}
                 {% include  "CinemaxBundle:content:item.html.twig" with { 'disc': disc } %}

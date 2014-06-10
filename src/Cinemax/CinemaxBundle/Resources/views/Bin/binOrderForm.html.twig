@@ -9,7 +9,7 @@
 {% block body %}
     <div class="order_position">
         <a name="order_page"></a>
-        <span>Форма оформления заказа</span>
+        <span class="catalog_title">Форма оформления заказа</span>
             {% for flashMessage in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">
                     {{ flashMessage }}

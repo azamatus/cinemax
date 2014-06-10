@@ -2,7 +2,7 @@
 {
     position: relative;
     text-align: center;
-    top: 60px;
+    top: 65px;
 }
 #order_form
 {
@@ -27,6 +27,7 @@
     margin-bottom: 20px;
     width: 285px;
     padding-left: 5px;
+    font-size: 16px;
 }
 #order_form label
 {
@@ -52,8 +53,18 @@
     float: right;
     margin-right: 40px;
     cursor: pointer;
+    font-size: 16px;
 }
 #order_form input[type="submit"]:hover
 {
     background-color: rgba(0, 0, 0, 1);
+}
+.catalog_title{
+border: 1px solid #FFC974;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0 20px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    display: inline-block!important;
 }
