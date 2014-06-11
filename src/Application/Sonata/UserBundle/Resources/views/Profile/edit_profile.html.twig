@@ -12,7 +12,11 @@ file that was distributed with this source code.
 {% block title %}
     {{ parent() }} : {{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}
 {% endblock %}
-
+{% block search %}
+    <div class="search">
+        {% render controller('CinemaxBundle:Search:ShowForm') %}
+    </div>
+{% endblock %}
 {% block body %}
 <div class="edit_block">
 <div class="sonata-user-edit-profile register">

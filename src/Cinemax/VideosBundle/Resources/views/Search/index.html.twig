@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 {% block title %}
-    {{ parent() }} : Фильмы
+    {{ parent() }} : Результаты поиска по запросу "{{ searchText }}"
 {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
@@ -12,13 +12,14 @@
     </div>
 {% endblock %}
 {% block body %}
-    <a name="movies"></a>
+    <a name="aftersearch"></a>
     <div class="all_catalog" style="height: 858px">
-        <span class="catalog_title">Каталог фильмов</span>
+        <span class="catalog_title">Результаты поиска </span>
 
         <div style="position: relative;">
             <div class="sort_header"></div>
         </div>
+        {% if pagination|length %}
         <div class="all_catalog_inner_border trailers" style="height: 810px">
             <div class="janrs_block">
                 {% render controller("CinemaxVideosBundle:Videos:getJanrs") %}
@@ -35,5 +36,12 @@
         <div class="paginate">
             {{ knp_pagination_render(pagination) }}
         </div>
+        {% else %}
+            <div class="all_catalog_inner_border">
+                <div class="not_founded">
+                    <span>По вашему запросу ничего не найдено</span>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

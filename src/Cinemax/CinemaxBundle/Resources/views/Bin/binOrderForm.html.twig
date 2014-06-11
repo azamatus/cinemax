@@ -6,6 +6,11 @@
     {{ parent() }}
     <link href="{{ asset("bundles/cinemax/css/order_page.css") }}" rel="stylesheet">
 {% endblock %}
+{% block search %}
+    <div class="search">
+        {% render controller('CinemaxBundle:Search:ShowForm') %}
+    </div>
+{% endblock %}
 {% block body %}
     <div class="order_position">
         <a name="order_page"></a>

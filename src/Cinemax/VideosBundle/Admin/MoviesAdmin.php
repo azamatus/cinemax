@@ -55,7 +55,7 @@ class MoviesAdmin extends Admin{
             ->addIdentifier('actors', null, array('label'=>'Актеры'))
             ->addIdentifier('directors', null, array('label'=>'Режиссер'))
             ->addIdentifier('countries', null, array('label'=>'Страны'))
-            ->addIdentifier('description', null, array('label'=>'Описание'))
+            ->addIdentifier('views', null, array('label'=>'Просмотры'))
             ->addIdentifier('year', null, array('label'=>'Год'))
             ->add('active', 'boolean', array('label'=>'Активен','editable' => true))
         ;
