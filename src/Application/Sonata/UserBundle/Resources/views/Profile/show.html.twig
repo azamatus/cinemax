@@ -12,6 +12,11 @@ file that was distributed with this source code.
 {% block title %}
     {{ parent() }} : {{ "title_user_account" | trans({}, 'SonataUserBundle')}} {{ app.user.fullname }}
 {% endblock %}
+{% block search %}
+    <div class="search">
+        {% render controller('CinemaxBundle:Search:ShowForm') %}
+    </div>
+{% endblock %}
 {% block fos_user_content %}
     <div class="user_profile">
             <h3>{{ "my_account" | trans({}, 'SonataUserBundle')}}</h3>

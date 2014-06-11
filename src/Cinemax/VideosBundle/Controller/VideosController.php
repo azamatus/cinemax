@@ -56,10 +56,12 @@ class VideosController extends Controller
 
     public function watchMovieAction($id){
 
-        $movie = $this->getDoctrine()
-            ->getRepository('CinemaxVideosBundle:Movies')
-            ->findOneBy(array('id'=>$id));
-        return $this->render('CinemaxVideosBundle:Videos:watch_movie.html.twig', array('movie'=>$movie));
+        $movieRepository = $this->getDoctrine()
+            ->getRepository('CinemaxVideosBundle:Movies');
+        $movies = $movieRepository->findOneBy(array('id'=>$id));
+
+        $movieRepository->incrementViews($movies->getId());
+        return $this->render('CinemaxVideosBundle:Videos:watch_movie.html.twig', array('movie'=>$movies));
     }
 
 }

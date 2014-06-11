@@ -33,3 +33,9 @@ sort_by_actors:
 sort_by_year:
     path: /year/{year}/
     defaults: { _controller: CinemaxVideosBundle:Sort:sortByYear }
+
+cinemax__movies_search:
+    pattern: /search/movies/
+    defaults: { _controller: CinemaxVideosBundle:SearchMovie:index }
+    requirements:
+       _method:  GET

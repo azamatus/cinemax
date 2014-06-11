@@ -7,10 +7,15 @@
     <link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('bundles/cinemax/css/rcarousel_catalog.css') }}" type="text/css" rel="stylesheet">
 {% endblock %}
+{% block search %}
+    <div class="search">
+        {% render controller('CinemaxBundle:Search:ShowForm') %}
+    </div>
+{% endblock %}
 {% block body %}
     <a name="aftersearch"></a>
     <div class="all_catalog">
-        <span class="catalog_title">Результаты поиска</span>
+        <span class="catalog_title">Результаты поиска </span>
         <div style="position: relative;">
             <div class="sort_header"></div>
         </div>

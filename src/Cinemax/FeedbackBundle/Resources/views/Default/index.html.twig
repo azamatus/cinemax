@@ -3,6 +3,11 @@
     {{ parent() }}
     <link type="text/css" href="{{ asset('bundles/cinemaxfeedback/css/feedback.css') }}" rel="stylesheet">
 {% endblock %}
+{% block search %}
+    <div class="search">
+        {% render controller('CinemaxBundle:Search:ShowForm') %}
+    </div>
+{% endblock %}
 {% block body %}
     <div class="feedback">
         <h1>Обратная связь</h1>

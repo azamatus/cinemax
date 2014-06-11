@@ -6,7 +6,11 @@
     <link href="{{ asset('bundles/cinemax/css/jquery.jscrollpane.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('bundles/cinemax/css/jscrollpane.css') }}" type="text/css" rel="stylesheet">
 {% endblock %}
-
+{% block search %}
+    <div class="search">
+        {% render controller('CinemaxBundle:Search:ShowForm') %}
+    </div>
+{% endblock %}
 {% block body %}
 <div class="catalog_slider">
     {% render controller("CinemaxBundle:Content:getSlider") %}

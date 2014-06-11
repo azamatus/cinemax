@@ -16,8 +16,7 @@ class SearchType extends AbstractType {
 
      public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('search', null,array('attr'=>array('placeholder'=>"Поиск...")));
-        //$builder->add('dueDate', null, array('widget' => 'single_text'));
+        $builder->add('search', null,array('attr'=>array('placeholder'=>"Поиск дисков...")));
     }
 
     public function getName()
