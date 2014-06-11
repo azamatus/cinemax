@@ -5,3 +5,31 @@ cinemax_trailers:
 trailer_get_popup:
     path: /trailer/{id}/
     defaults: { _controller: CinemaxVideosBundle:Videos:showTrailer }
+
+movies_catalog:
+    path: /movies/
+    defaults: { _controller: CinemaxVideosBundle:Videos:moviesCatalog }
+
+movie_watch:
+    path: /movie/{id}/
+    defaults: { _controller: CinemaxVideosBundle:Videos:watchMovie }
+
+sort_by_janr:
+    path: /genre/{id}/
+    defaults: { _controller: CinemaxVideosBundle:Sort:sortByJanr }
+
+sort_by_directors:
+    path: /director/{id}/
+    defaults: { _controller: CinemaxVideosBundle:Sort:sortByDirector }
+
+sort_by_countries:
+    path: /countries/{id}/
+    defaults: { _controller: CinemaxVideosBundle:Sort:sortByCountries }
+
+sort_by_actors:
+    path: /actors/{id}/
+    defaults: { _controller: CinemaxVideosBundle:Sort:sortByActors }
+
+sort_by_year:
+    path: /year/{year}/
+    defaults: { _controller: CinemaxVideosBundle:Sort:sortByYear }

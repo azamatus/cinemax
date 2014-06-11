@@ -28,7 +28,10 @@ class Janrs
      */
     private $name;
 
-
+    /**
+     * @ORM\ManyToMany(targetEntity="\Cinemax\VideosBundle\Entity\Movies", mappedBy="janrs")
+     */
+    protected $movies;
 
     /**
      * Get id
@@ -66,5 +69,46 @@ class Janrs
     public function __toString()
     {
         return $this->getName()?$this->getName():"";
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->movies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+
+    /**
+     * Add movies
+     *
+     * @param \Cinemax\VideosBundle\Entity\Movies $movies
+     * @return Janrs
+     */
+    public function addMovie(\Cinemax\VideosBundle\Entity\Movies $movies)
+    {
+        $this->movies[] = $movies;
+    
+        return $this;
+    }
+
+    /**
+     * Remove movies
+     *
+     * @param \Cinemax\VideosBundle\Entity\Movies $movies
+     */
+    public function removeMovie(\Cinemax\VideosBundle\Entity\Movies $movies)
+    {
+        $this->movies->removeElement($movies);
+    }
+
+    /**
+     * Get movies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMovies()
+    {
+        return $this->movies;
     }
 }

@@ -11,5 +11,32 @@
                 <argument>SonataAdminBundle</argument>
             </call>
         </service>
+        <service id="sonata.admin.movies" class="Cinemax\VideosBundle\Admin\MoviesAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Видео" label="Фильмы"/>
+            <argument />
+            <argument>Cinemax\VideosBundle\Entity\Movies</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.directors" class="Cinemax\VideosBundle\Admin\DirectorsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Видео" label="Режиссеры"/>
+            <argument />
+            <argument>Cinemax\VideosBundle\Entity\Directors</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.actors" class="Cinemax\VideosBundle\Admin\ActorsAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Видео" label="Актеры"/>
+            <argument />
+            <argument>Cinemax\VideosBundle\Entity\Actors</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTranslationDomain">
+                <argument>SonataAdminBundle</argument>
+            </call>
+        </service>
     </services>
 </container>

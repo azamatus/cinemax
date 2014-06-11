@@ -1,16 +1,16 @@
 <?php
 
-namespace Cinemax\CinemaxBundle\Entity;
+namespace Cinemax\VideosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Countries
+ * Directors
  *
- * @ORM\Table(name="countries")
+ * @ORM\Table(name="directors")
  * @ORM\Entity
  */
-class Countries
+class Directors
 {
     /**
      * @var integer
@@ -24,15 +24,26 @@ class Countries
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100, nullable=true)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Movies", mappedBy="directors")
+     */
+    private $movies;
 
     /**
-     * @ORM\ManyToMany(targetEntity="\Cinemax\VideosBundle\Entity\Movies", mappedBy="countries")
+     * Constructor
      */
-    protected $movies;
+    public function __construct()
+    {
+        $this->movies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+
     /**
      * Get id
      *
@@ -47,7 +58,7 @@ class Countries
      * Set name
      *
      * @param string $name
-     * @return Countries
+     * @return Directors
      */
     public function setName($name)
     {
@@ -66,24 +77,11 @@ class Countries
         return $this->name;
     }
 
-    public function __toString()
-    {
-        return $this->getName()?$this->getName():"";
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->movies = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
     /**
      * Add movies
      *
      * @param \Cinemax\VideosBundle\Entity\Movies $movies
-     * @return Countries
+     * @return Directors
      */
     public function addMovie(\Cinemax\VideosBundle\Entity\Movies $movies)
     {
@@ -110,5 +108,9 @@ class Countries
     public function getMovies()
     {
         return $this->movies;
+    }
+    public function __toString()
+    {
+        return $this->getName()?$this->getName():"";
     }
 }
