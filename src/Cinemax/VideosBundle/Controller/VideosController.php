@@ -16,9 +16,9 @@ class VideosController extends Controller
         $pagination = $paginator
             ->paginate($videos,
                 $this->get('request')->query->get('page', 1),
-                12
+                9
             );
-        return $this->render('CinemaxVideosBundle:Videos:index.html.twig', array('pagination'=>$pagination));
+        return $this->render('CinemaxVideosBundle:Videos:trailers.html.twig', array('pagination'=>$pagination));
     }
 
     public function showTrailerAction($id){
@@ -29,4 +29,37 @@ class VideosController extends Controller
 
         return $this->render('CinemaxVideosBundle:Videos:show_popup_trailer.html.twig', array('trailer'=>$trailer));
     }
+
+    public function moviesCatalogAction(){
+
+        $movies = $this->getDoctrine()
+            ->getRepository('CinemaxVideosBundle:Movies')
+            ->findBy(array('active'=>true), array('id'=>'DESC'));
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator
+            ->paginate($movies,
+                $this->get('request')->query->get('page', 1),
+                12
+            );
+        return $this->render('CinemaxVideosBundle:Videos:movies_catalog.html.twig', array('pagination'=>$pagination));
+    }
+
+    public function getJanrsAction(){
+
+        $janrs = $this->getDoctrine()
+            ->getRepository('CinemaxBundle:Janrs')
+            ->findBy(array(), array('name'=>'ASC'));
+
+        return $this->render('CinemaxVideosBundle:Videos:janrs.html.twig', array('janrs'=>$janrs));
+    }
+
+    public function watchMovieAction($id){
+
+        $movie = $this->getDoctrine()
+            ->getRepository('CinemaxVideosBundle:Movies')
+            ->findOneBy(array('id'=>$id));
+        return $this->render('CinemaxVideosBundle:Videos:watch_movie.html.twig', array('movie'=>$movie));
+    }
+
 }

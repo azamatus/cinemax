@@ -1,0 +1,65 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    {{ parent() }} : {{ movie.name }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <a name="movie"></a>
+    <div class="all_catalog" style="height: 858px">
+        <span class="catalog_title">Каталог фильмов</span>
+
+        <div style="position: relative;">
+            <div class="sort_header"></div>
+        </div>
+        <div class="all_catalog_inner_border trailers" style="height: 810px">
+            <div class="movie_info_block">
+                {% media movie.poster, 'small' %}
+                {{ movie.url|raw }}
+                <div class="movie_info">
+                    <p><span>Название фильма:</span> {{ movie.name }}</p>
+                    <p><span>Режиссер:</span>
+                        {% for  director in movie.directors %}
+                            {% if not loop.last %}
+                                <a href="{{ path('sort_by_directors', {'id':director.id}) }}#anchor">{{ director.name }}</a>,
+                            {% else %}
+                                <a href="{{ path('sort_by_directors', {'id':director.id}) }}#anchor">{{ director.name }}</a>.
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p><span>Жанр:</span>
+                        {% for janr in movie.janrs %}
+                            {% if not loop.last %}
+                                <a href="{{ path('sort_by_janr', {'id':janr.id}) }}#anchor">{{ janr.name }}</a>,
+                            {% else %}
+                                <a href="{{ path('sort_by_janr', {'id':janr.id}) }}#anchor">{{ janr.name }}</a>.
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p><span>Страна:</span>
+                        {% for country in movie.countries %}
+                            {% if not loop.last %}
+                                <a href="{{ path('sort_by_countries', {'id':country.id}) }}#anchor">{{ country.name }}</a>,
+                            {% else %}
+                                <a href="{{ path('sort_by_countries', {'id':country.id}) }}#anchor">{{ country.name }}</a>.
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                   <p><span>В ролях:</span>
+                        {% for actor in movie.actors %}
+                            {% if not loop.last %}
+                                <a href="{{ path('sort_by_actors', {'id':actor.id}) }}#anchor">{{ actor.name }}</a>,
+                            {% else %}
+                                <a href="{{ path('sort_by_actors', {'id':actor.id}) }}#anchor">{{ actor.name }}</a>.
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p><span>Год:</span> <a href="{{ path('sort_by_year', {'year':movie.year}) }}#anchor">{{ movie.year}}</a></p>
+                </div>
+                <div class="movie_description"><p><span>Описание: </span>{{ movie.description|raw }}</p></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

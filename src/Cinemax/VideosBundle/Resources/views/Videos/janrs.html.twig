@@ -1,0 +1,8 @@
+{% if janrs %}
+        <span class="catalog_title janr_title">Жанры</span>
+        <ul>
+            {% for janr in janrs %}
+                <li><a href="{{ path('sort_by_janr', {'id':janr.id}) }}#anchor">{{ janr.name }}</a></li>
+            {% endfor %}
+        </ul>
+{% endif %}

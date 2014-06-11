@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    {{ parent() }} : {{ name }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/cinemax/css/catalog.css') }}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <a name="anchor"></a>
+    <div class="all_catalog" style="height: 858px">
+        <span class="catalog_title"> {{ name }}</span>
+
+        <div style="position: relative;">
+            <div class="sort_header"></div>
+        </div>
+        <div class="all_catalog_inner_border trailers" style="height: 810px">
+            <div class="janrs_block">
+                {% render controller("CinemaxVideosBundle:Videos:getJanrs") %}
+            </div>
+            <div class="movies_block">
+                {% for movie in pagination %}
+                    <div class="float_left movie">
+                        <a href="{{ path('movie_watch', {'id':movie.id}) }}#movie">{% media movie.poster, 'small' %}</a>
+                        <span>{{ movie.name }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="paginate">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

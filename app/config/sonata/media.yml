@@ -34,7 +34,13 @@ sonata_media:
                   - sonata.media.provider.youtube
             formats:
                 normal: { width: 700, quality: 768}
-                small: { width: 178, height: 178, quality: 100}
+                small: { width: 280, quality: 100}
+
+        movies_poster:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 165, height: 230, quality: 70 }
     cdn:
         # define the public base url for the uploaded media
         server:

@@ -1,16 +1,16 @@
 <?php
 
-namespace Cinemax\CinemaxBundle\Entity;
+namespace Cinemax\VideosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Countries
+ * Actors
  *
- * @ORM\Table(name="countries")
+ * @ORM\Table(name="actors")
  * @ORM\Entity
  */
-class Countries
+class Actors
 {
     /**
      * @var integer
@@ -24,13 +24,13 @@ class Countries
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100, nullable=true)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="\Cinemax\VideosBundle\Entity\Movies", mappedBy="countries")
+     * @ORM\ManyToMany(targetEntity="Movies", mappedBy="actors")
      */
     protected $movies;
     /**
@@ -47,7 +47,7 @@ class Countries
      * Set name
      *
      * @param string $name
-     * @return Countries
+     * @return Actors
      */
     public function setName($name)
     {
@@ -65,12 +65,6 @@ class Countries
     {
         return $this->name;
     }
-
-    public function __toString()
-    {
-        return $this->getName()?$this->getName():"";
-    }
-
     /**
      * Constructor
      */
@@ -83,7 +77,7 @@ class Countries
      * Add movies
      *
      * @param \Cinemax\VideosBundle\Entity\Movies $movies
-     * @return Countries
+     * @return Actors
      */
     public function addMovie(\Cinemax\VideosBundle\Entity\Movies $movies)
     {
@@ -110,5 +104,9 @@ class Countries
     public function getMovies()
     {
         return $this->movies;
+    }
+    public function __toString()
+    {
+        return $this->getName()?$this->getName():"";
     }
 }
