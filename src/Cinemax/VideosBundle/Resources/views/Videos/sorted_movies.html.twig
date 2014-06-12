@@ -26,8 +26,7 @@
             <div class="movies_block">
                 {% for movie in pagination %}
                     <div class="float_left movie">
-                        <a href="{{ path('movie_watch', {'id':movie.id}) }}#movie">{% media movie.poster, 'small' %}</a>
-                        <span>{{ movie.name }}</span>
+                        <a href="{{ path('movie_watch', {'id':movie.id}) }}#movie" title="{{ movie.name }}">{% media movie.poster, 'small' %}<span>{{ movie.name }}</span></a>
                     </div>
                 {% endfor %}
             </div>

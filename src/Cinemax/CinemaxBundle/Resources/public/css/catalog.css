@@ -32,6 +32,8 @@
     margin-right: 15px;
     position: relative;
     left: 10px;
+    overflow: hidden;
+    width: 233px;
 }
 .disc > a
 {
@@ -42,8 +44,13 @@
     text-transform: uppercase;
     display: block;
     margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
-
+.trigger a>span{
+    overflow: visible!important;
+}
 /*.poster*/
 /*{*/
     /*width: 225px;*/
@@ -298,6 +305,9 @@
     text-transform: uppercase;
     margin-bottom: 10px;
     display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .trailers .disc{
     margin: 0 30px 0 15px!important;
@@ -348,6 +358,8 @@
 }
 .movies_block .movie{
     margin: 5px 17px;
+    width: 169px;
+    overflow: hidden;
 }
 .movies_block .movie img{
     width: 165px;
@@ -474,4 +486,7 @@
 }
 .no_comment{
     font-size: 24px;
+}
+.trailers .disc{
+    width: 286px!important;
 }
