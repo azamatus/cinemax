@@ -41,7 +41,7 @@ class MoviesAdmin extends Admin{
             ->add('actors', null, array('label'=>'Актеры'))
             ->add('countries', null, array('label'=>'Страны'))
             ->add('year', null, array('label'=>'Год', 'required'=>true))
-            ->add('description', 'ckeditor', array('label'=>'Описание', 'attr' => array('class' => 'span10', 'rows' => 20),'config'=>array('width'=>'700px','height'=>'345px','resize_enabled'=>false,'resize_maxHeight' => '345px','resize_minHeight' => '345px')))
+            ->add('description', null, array('label'=>'Описание', 'required'=>true))
             ->add('active', null, array('label'=> 'Активен'))
             ->add('poster', 'sonata_type_model_list', array('label'=> 'Постер','required' => true), array('link_parameters' => array('context' => 'movies_poster')))
         ;

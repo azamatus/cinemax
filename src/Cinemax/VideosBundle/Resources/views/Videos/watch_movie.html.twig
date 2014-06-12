@@ -30,7 +30,7 @@
                             {% if not loop.last %}
                                 <a href="{{ path('sort_by_directors', {'id':director.id}) }}#anchor">{{ director.name }}</a>,
                             {% else %}
-                                <a href="{{ path('sort_by_directors', {'id':director.id}) }}#anchor">{{ director.name }}</a>.
+                                <a href="{{ path('sort_by_directors', {'id':director.id}) }}#anchor">{{ director.name }}</a>
                             {% endif %}
                         {% endfor %}
                     </p>
@@ -39,7 +39,7 @@
                             {% if not loop.last %}
                                 <a href="{{ path('sort_by_janr', {'id':janr.id}) }}#anchor">{{ janr.name }}</a>,
                             {% else %}
-                                <a href="{{ path('sort_by_janr', {'id':janr.id}) }}#anchor">{{ janr.name }}</a>.
+                                <a href="{{ path('sort_by_janr', {'id':janr.id}) }}#anchor">{{ janr.name }}</a>
                             {% endif %}
                         {% endfor %}
                     </p>
@@ -48,7 +48,7 @@
                             {% if not loop.last %}
                                 <a href="{{ path('sort_by_countries', {'id':country.id}) }}#anchor">{{ country.name }}</a>,
                             {% else %}
-                                <a href="{{ path('sort_by_countries', {'id':country.id}) }}#anchor">{{ country.name }}</a>.
+                                <a href="{{ path('sort_by_countries', {'id':country.id}) }}#anchor">{{ country.name }}</a>
                             {% endif %}
                         {% endfor %}
                     </p>
@@ -57,13 +57,13 @@
                             {% if not loop.last %}
                                 <a href="{{ path('sort_by_actors', {'id':actor.id}) }}#anchor">{{ actor.name }}</a>,
                             {% else %}
-                                <a href="{{ path('sort_by_actors', {'id':actor.id}) }}#anchor">{{ actor.name }}</a>.
+                                <a href="{{ path('sort_by_actors', {'id':actor.id}) }}#anchor">{{ actor.name }}</a>
                             {% endif %}
                         {% endfor %}
                     </p>
                     <p><span>Год:</span> <a href="{{ path('sort_by_year', {'year':movie.year}) }}#anchor">{{ movie.year}}</a></p>
                 </div>
-                <div class="movie_description"><p><span>Описание: </span>{{ movie.description|raw }}</p></div>
+                <div class="movie_description"><p><span>Описание: </span><p>{{ movie.description|raw }}</p></p></div>
             </div>
         </div>
     </div>
