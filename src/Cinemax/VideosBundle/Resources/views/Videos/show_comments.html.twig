@@ -1,0 +1,12 @@
+{% if comments %}
+    <div class="comment_show">
+        {% for comment in comments %}
+            <div class="comment_block">
+                <span class="comment_author">{{ comment.author }} <span class="comment_date">{{ comment.created|date('d-m-Y') }}</span></span>
+                <span class="comment_content">{{ comment.comment }}</span>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="comment_show no_comment">Комментариев еще нету</div>
+{% endif %}

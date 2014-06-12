@@ -13,12 +13,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Movies
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->janrs = new ArrayCollection();
+        $this->comment = new ArrayCollection();
     }
 
-    /**
+
+     /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
@@ -103,6 +108,12 @@ class Movies
      * @ORM\JoinTable(name="movies_directors")
      */
     protected $directors;
+
+    /**
+     * @var Comment
+     * @ORM\OneToMany(targetEntity="\Cinemax\FeedbackBundle\Entity\Comments", mappedBy="movie", cascade={"persist"})
+     */
+    private $comment;
 
     /**
      * Get id
@@ -405,5 +416,38 @@ class Movies
     public function getDirectors()
     {
         return $this->directors;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Cinemax\FeedbackBundle\Entity\Comments $comment
+     * @return Movies
+     */
+    public function addComment(\Cinemax\FeedbackBundle\Entity\Comments $comment)
+    {
+        $this->comment[] = $comment;
+    
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Cinemax\FeedbackBundle\Entity\Comments $comment
+     */
+    public function removeComment(\Cinemax\FeedbackBundle\Entity\Comments $comment)
+    {
+        $this->comment->removeElement($comment);
+    }
+
+    /**
+     * Get comment
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComment()
+    {
+        return $this->comment;
     }
 }
