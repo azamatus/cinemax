@@ -67,4 +67,6 @@
             </div>
         </div>
     </div>
+    {% render controller("CinemaxFeedbackBundle:Default:saveComment", {'id': movie.id }) %}
+    {% render controller("CinemaxFeedbackBundle:Default:showComments", {'id': movie.id }) %}
 {% endblock %}

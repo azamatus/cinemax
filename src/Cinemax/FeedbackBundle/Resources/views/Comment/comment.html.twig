@@ -1,0 +1,25 @@
+<div class="comments_main_block">
+    <h2 class="catalog_title">Комментарии</h2>
+    {% if  app.user %}
+       <form method="post" action="{{ path('cinemax_movie_comment', {'id':movie_id}) }}#movie" class="comment_form">
+            <div class="comment_outbox">
+                <div class="comment_inbox">
+                    {{ form_widget(commentForm.author, {value: app.user}) }}
+                    {{ form_widget(commentForm.comment) }}
+                    {{ form_widget(commentForm._token) }}
+                </div>
+            </div>
+            <div class="comment_button clearbox">
+                <button type="submit" class="button_register">Прокомментировать</button>
+            </div>
+        </form>
+    {% else %}
+        <div style="margin-bottom: 150px;">
+        <div class="comment_outbox">
+            <div class="comment_inbox">
+                <h2>Комментирование фильма можно только зарегистрированным пользователям</h2>
+            </div>
+        </div>
+        </div>
+    {% endif %}
+</div>

@@ -1,3 +1,9 @@
 cinemax_feedback:
     pattern:  /feedback/
     defaults: { _controller: CinemaxFeedbackBundle:Default:index }
+
+cinemax_movie_comment:
+    pattern: /movie/{id}/comment/
+    defaults: { _controller: CinemaxFeedbackBundle:Default:saveComment }
+    requirements:
+        id: \d+
