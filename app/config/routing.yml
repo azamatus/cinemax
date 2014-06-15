@@ -2,9 +2,9 @@ cinemax_videos:
     resource: "@CinemaxVideosBundle/Resources/config/routing.yml"
     prefix:   /
 
-strokit_config:
-    resource: "@StrokitConfigBundle/Resources/config/routing.yml"
-    prefix:   /admin
+#strokit_config:
+#    resource: "@StrokitConfigBundle/Resources/config/routing.yml"
+#    prefix:   /admin
 
 cinemax_feedback:
     resource: "@CinemaxFeedbackBundle/Resources/config/routing.yml"
