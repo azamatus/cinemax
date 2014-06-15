@@ -20,6 +20,9 @@ class Movies
     {
         $this->janrs = new ArrayCollection();
         $this->comment = new ArrayCollection();
+        $this->countries = new ArrayCollection();
+        $this->actors = new ArrayCollection();
+        $this->directors = new ArrayCollection();
     }
 
 
