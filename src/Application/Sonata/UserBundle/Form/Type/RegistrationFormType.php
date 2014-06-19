@@ -22,7 +22,8 @@ class RegistrationFormType extends BaseType
         $builder->add('firstname');
         $builder->add('lastname');
         $builder->add('phone');
-        $builder->add('address');
+        $builder ->add('captcha', 'captcha', array('attr'=>array('placeholder'=>'Введите цифры с картинки'), 'reload'=>'#', 'as_url'=>true));
+        $builder->add('address', null,array('required'=>true));
     }
 
     public function getName()

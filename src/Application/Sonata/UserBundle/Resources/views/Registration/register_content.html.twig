@@ -1,3 +1,4 @@
+<link type="text/css" href="{{ asset('bundles/cinemaxfeedback/css/feedback.css') }}" rel="stylesheet">
 <form action="{{ path('fos_user_registration_register') }}#check_page" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" id="registration">
     <a name="reg"></a>
     <a name="check_page"></a>
@@ -28,26 +29,26 @@
         <div>
             {#<div class="registration_label">{{ form_label(form.username, 'Логин:') }}</div>#}
             {{ form_errors(form.username) }}
-            <div class="registration_input">{{ form_label(form.username, 'Логин:') }} {{ form_widget(form.username) }}</div>
+            <div class="registration_input">{{ form_label(form.username, 'Логин:*') }} {{ form_widget(form.username) }}</div>
         </div>
 
         <div>
             {#<div class="registration_label">{{ form_label(form.email, 'E-mail:') }}</div>#}
             {{ form_errors(form.email) }}
-            <div class="registration_input">{{ form_label(form.email, 'E-mail:') }}{{ form_widget(form.email) }}</div>
+            <div class="registration_input">{{ form_label(form.email, 'E-mail:*') }}{{ form_widget(form.email) }}</div>
         </div>
 
         <div>
             {#<div class="registration_label">{{ form_label(form.plainPassword.first, 'Пароль:') }}</div>#}
             {{ form_errors(form.plainPassword.first) }}
-            <div class="registration_input">{{ form_label(form.plainPassword.first, 'Пароль:') }}{{ form_widget(form.plainPassword.first) }}</div>
+            <div class="registration_input">{{ form_label(form.plainPassword.first, 'Пароль:*') }}{{ form_widget(form.plainPassword.first) }}</div>
         </div>
 
         <div>
             {#<div class="registration_label">{{ form_label(form.plainPassword.second, 'Повтор пароля:') }}</div>#}
             {{ form_errors(form.plainPassword.second) }}
             <div class="registration_input">
-                {{ form_label(form.plainPassword.second, 'Повтор пароля:') }}{{ form_widget(form.plainPassword.second) }}
+                {{ form_label(form.plainPassword.second, 'Повтор пароля:*') }}{{ form_widget(form.plainPassword.second) }}
             </div>
         </div>
 
@@ -74,9 +75,17 @@
         <div>
             {#<div class="registration_label">{{ form_label(form.address, 'Домашний адрес:') }}</div>#}
             {{ form_errors(form.address) }}
-            <div class="registration_input">{{ form_label(form.address, 'Домашний адрес:') }}{{ form_widget(form.address) }}</div>
+            <div class="registration_input">{{ form_label(form.address, 'Домашний адрес:*') }}{{ form_widget(form.address) }}</div>
         </div>
-
+        <div class="item captcha_block">
+            {% set error = '' %}
+            {% set error_message = '' %}
+            {% if form.captcha.vars.errors|length %}
+                {% set error = 'error' %}
+                {% set error_message = form_errors(form.captcha)|striptags %}
+            {% endif %}
+            {{ form_widget(form.captcha, {'attr':{'class':error, 'title':error_message} }) }}<br/>
+        </div>
         {{ form_rest(form) }}
         <div class="registration_submit">
             <button type="submit" class="button_register">{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</button>
