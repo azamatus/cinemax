@@ -24,9 +24,12 @@
     position: relative;
     left: 15%;
 }
+.registration_block #fos_user_registration_form_captcha{
+    width: 21%;
+}
 .registration_block label{
     float: left;
-    width: 130px;
+    width: 135px;
     text-align: right;
     margin-right: 15px;
     padding-top: 11px;

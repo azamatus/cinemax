@@ -27,16 +27,20 @@
 .item input[type=email]{
     margin-bottom: 15px;
     width: 30%;
+    font-size: 16px;
 }
 .item input[type=text]{
-    width: 22%;
+    width: 28%;
     margin-left: 10px;
     margin-right: 10px;
     text-transform: uppercase;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .item textarea{
     width: 50%;
     margin-bottom: 10px;
+    font-size: 16px;
 }
 .item img{
     border: 1px solid;
@@ -48,6 +52,9 @@
 .captcha_block{
     margin-bottom: 20px;
 }
+.captcha_block .captcha_reload:hover{
+    color: #ffffff;
+}
 .captcha_block button{
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid #FFC974;
@@ -56,14 +63,16 @@
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     height: 24px;
-    width: 21%;
     text-transform: uppercase;
     margin-top: 15px;
+    width: 28%;
+    font-size: 16px;
 }
 .captcha_block button:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 1);
     border: 2px solid #FFC974;
+    font-size: 16px;
 }
 .error{
     color: red;
