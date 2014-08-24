@@ -13,7 +13,8 @@
     margin-top: -33px;
     overflow: hidden;
     position: absolute;
-    height: 405px;
+    height: 394px;
+    background-color: rgba(0, 0, 0, 0.67);
 
 }
 .nivoSlider img {

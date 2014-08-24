@@ -22,7 +22,7 @@ class ContentController  extends Controller{
             ->getRepository("CinemaxBundle:Discs");
 
         $newdiscs = $repository-> getLastUpdatedDiscs();
-        return $this->render('CinemaxBundle:content:catalog.html.twig', array('discs' => $newdiscs));
+        return $this->render('CinemaxBundle:Content:catalog.html.twig', array('discs' => $newdiscs));
     }
 
     public function getSliderAction()
@@ -30,7 +30,7 @@ class ContentController  extends Controller{
         $discs = $this -> getDoctrine()
             ->getRepository("CinemaxBundle:Discs")
             ->findAll();
-        return $this->render('CinemaxBundle:content:get_slider.html.twig', array('discs' => $discs));
+        return $this->render('CinemaxBundle:Content:get_slider.html.twig', array('discs' => $discs));
     }
 
     public function getAllCatalogAction(){
@@ -76,7 +76,7 @@ class ContentController  extends Controller{
             ->paginate($discs, $this->get('request')->query->get('page',1),12);
         $count = count($pagination);
 
-        return $this -> render('CinemaxBundle:content:allCatalog.html.twig',array('count'=> $count, 'pagination' => $pagination, 'title' => 'Весь каталог'));
+        return $this -> render('CinemaxBundle:Content:allCatalog.html.twig',array('count'=> $count, 'pagination' => $pagination, 'title' => 'Весь каталог'));
 
     }
 
@@ -92,7 +92,7 @@ class ContentController  extends Controller{
         $pagination = $paginator
             ->paginate($sortedDiscs, $this->get('request')->query->get('page',1),12);
         $count = count($pagination);
-        return $this->render("CinemaxBundle:content:allCatalog.html.twig", array('count'=> $count, 'pagination' => $pagination, 'title' => 'Весь каталог'));
+        return $this->render("CinemaxBundle:Content:allCatalog.html.twig", array('count'=> $count, 'pagination' => $pagination, 'title' => 'Весь каталог'));
     }
 
     public function getNoveltiesAction()
@@ -138,7 +138,7 @@ class ContentController  extends Controller{
             ->paginate($novelties, $this->get('request')->query->get('page',1),12);
 
         $count = count($pagination);
-        return $this->render('CinemaxBundle:content:allCatalog.html.twig', array('count'=> $count, 'pagination' => $pagination, 'title' => 'Новинки'));
+        return $this->render('CinemaxBundle:Content:allCatalog.html.twig', array('count'=> $count, 'pagination' => $pagination, 'title' => 'Новинки'));
 
     }
     public function getInfoAction($id){
@@ -178,7 +178,7 @@ class ContentController  extends Controller{
             ->getRepository("CinemaxBundle:Discs")
             ->find($id);
 
-        return $this->render('CinemaxBundle:content:disc_info.html.twig', array('disc' => $disc_repo ));
+        return $this->render('CinemaxBundle:Content:disc_info.html.twig', array('disc' => $disc_repo ));
 
     }
 

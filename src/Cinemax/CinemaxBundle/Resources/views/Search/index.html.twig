@@ -23,7 +23,7 @@
         {% if pagination|length %}
                 <div class="all_catalog_inner_border">
                     {% for disc in pagination %}
-                        {% include  "CinemaxBundle:content:item.html.twig" with { 'disc': disc } %}
+                        {% include  "CinemaxBundle:Content:item.html.twig" with { 'disc': disc } %}
                     {% endfor %}
                 </div>
                 <div class="paginate">
