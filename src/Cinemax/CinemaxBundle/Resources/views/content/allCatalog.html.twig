@@ -29,7 +29,7 @@
         <div class="catalog_to_bin catalog_title"><a href="{{ path('cinemax_bin_discs')}}#bin"><p>Перейти в корзину</p></a></div>
         <div class="all_catalog_inner_border">
             {% for disc in pagination %}
-                {% include  "CinemaxBundle:content:item.html.twig" with { 'disc': disc } %}
+                {% include  "CinemaxBundle:Content:item.html.twig" with { 'disc': disc } %}
             {% endfor %}
         </div>
         <div class="paginate">

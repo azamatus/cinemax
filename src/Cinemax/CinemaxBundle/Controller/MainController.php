@@ -43,6 +43,6 @@ class MainController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('CinemaxBundle:content:content.html.twig');
+        return $this->render('CinemaxBundle:Content:content.html.twig');
     }
 }
